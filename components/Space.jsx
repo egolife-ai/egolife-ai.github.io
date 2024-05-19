@@ -17,3 +17,5 @@ const Space = () => {
 };
 
 export default Space;
+
+useGLTF.preload("egohouse.gltf");

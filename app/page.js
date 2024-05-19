@@ -11,7 +11,7 @@ export default function Home() {
         <motion.h1
           initial={{ opacity: 0, filter: "blur(4px)" }}
           animate={{ opacity: 1, filter: "blur(0)" }}
-          transition={{ duration: 2, type: "tween", ease: "easeOut" }}
+          transition={{ duration: 2, type: "spring" }}
         >
           <Image
             src="/egolife.png"
