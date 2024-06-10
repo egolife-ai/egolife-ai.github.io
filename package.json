@@ -11,6 +11,9 @@
   "dependencies": {
     "@react-three/drei": "^9.105.6",
     "@react-three/fiber": "^8.16.6",
+    "@theatre/core": "^0.5.1",
+    "@theatre/r3f": "^0.5.1",
+    "@theatre/studio": "^0.5.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.4",

@@ -7,6 +7,11 @@ import { motion } from "framer-motion";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      {/* <div className="w-[300px] h-[200px] grid place-items-center fixed top-0 left-0">
+        <video autoplay>
+          <source src="/videos/sample-video.mp4" type="video/mp4" />
+        </video>
+      </div> */}
       <div className="fixed top-0 flex z-10">
         <motion.h1
           initial={{ opacity: 0, filter: "blur(4px)" }}
