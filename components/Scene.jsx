@@ -10,7 +10,8 @@ import studio from "@theatre/studio";
 import { getProject } from "@theatre/core";
 import { Leva } from "leva";
 import projectState from "@/data/egolife.theatre-project-state.json";
-import { isProd } from "@/app/page";
+
+const isProd = process.env.NODE_ENV === "production";
 
 const project = getProject(
   "egolife",
