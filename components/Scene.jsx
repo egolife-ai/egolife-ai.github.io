@@ -9,12 +9,18 @@ import extension from "@theatre/r3f/dist/extension";
 import studio from "@theatre/studio";
 import { getProject } from "@theatre/core";
 import { Leva } from "leva";
+import projectState from "@/data/egolife.theatre-project-state.json";
 
-const project = getProject("egolife");
+const project = getProject(
+  "egolife",
+  isProd ? { state: projectState } : undefined,
+);
 const mainSheet = project.sheet("Main");
 
-studio.initialize();
-studio.extend(extension);
+if (!isProd) {
+  studio.initialize();
+  studio.extend(extension);
+}
 
 const Scene = () => {
   return (
@@ -29,7 +35,7 @@ const Scene = () => {
           </SheetProvider>
         </Canvas>
       </div>
-      <div className="fixed right-0 bottom-0">
+      <div className="fixed bottom-0 right-0">
         <Leva fill hidden />
       </div>
     </>

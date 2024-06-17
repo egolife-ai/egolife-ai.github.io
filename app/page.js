@@ -9,6 +9,8 @@ import Content from "@/components/Content";
 import { createContext, useState } from "react";
 import Controls from "@/components/Controls";
 
+export const isProd = process.env.NODE_ENV === "production";
+
 // TODO: Aesthetic like Sims city
 // TODO: Controls can look like a video game
 
