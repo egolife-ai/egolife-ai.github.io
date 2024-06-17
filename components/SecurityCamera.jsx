@@ -5,23 +5,33 @@ import VideoAnnotation from "./VideoAnnotation";
 import { SecurityCameraModel } from "./SecurityCameraModel";
 import { useState } from "react";
 
-const SecurityCamera = ({ id, videoSrc }) => {
+const SecurityCamera = ({
+  groupId,
+  id,
+  videoSrc,
+  showSight = false,
+  visible = true,
+}) => {
   const [showVideo, setShowVideo] = useState(false);
 
   return (
-    <e.group theatreKey={`SecurityCameraGroup-${id}`}>
+    <e.group
+      theatreKey={`${groupId} / SecurityCameraGroup-${id}`}
+      visible={visible}
+    >
       <SecurityCameraModel
-        onPointerEnter={() => {
+        onPointerEnter={(e) => {
+          e.stopPropagation();
           setShowVideo(true);
         }}
-        onPointerLeave={() => {
+        onPointerLeave={(e) => {
+          e.stopPropagation();
           setShowVideo(false);
         }}
       />
-      <e.mesh
+      <mesh
         scale={0.5}
-        theatreKey={`SecurityCameraSight-${id}`}
-        position={[0.25, -0.24, 0.54]}
+        position={[0.32, -0.17, 0.81]}
         rotation={[0.48, -1.1, 1.6]}
         onPointerEnter={() => {
           setShowVideo(true);
@@ -29,6 +39,7 @@ const SecurityCamera = ({ id, videoSrc }) => {
         onPointerLeave={() => {
           setShowVideo(false);
         }}
+        visible={showSight}
       >
         <coneGeometry args={[1, 2, 4, 1, true]} />
         <meshStandardMaterial
@@ -37,7 +48,7 @@ const SecurityCamera = ({ id, videoSrc }) => {
           opacity={0.2}
           side={THREE.DoubleSide}
         />
-      </e.mesh>
+      </mesh>
       <VideoAnnotation src={videoSrc} show={showVideo} />
     </e.group>
   );
