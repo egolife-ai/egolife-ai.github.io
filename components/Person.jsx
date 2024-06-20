@@ -3,6 +3,7 @@ import { editable as e } from "@theatre/r3f";
 import * as THREE from "three";
 import VideoAnnotation from "./VideoAnnotation";
 import { useState } from "react";
+import Sight from "./Sight";
 
 const Person = ({
   id,
@@ -11,7 +12,7 @@ const Person = ({
   showSight = false,
   visible = true,
 }) => {
-  const [showVideo, setShowVideo] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   return (
     <e.group theatreKey={`Persons / PersonGroup-${id}`} visible={visible}>
@@ -19,35 +20,21 @@ const Person = ({
         <Model
           onPointerEnter={(e) => {
             e.stopPropagation();
-            setShowVideo(true);
+            setHovered(true);
           }}
           onPointerLeave={(e) => {
             e.stopPropagation();
-            setShowVideo(false);
+            setHovered(false);
           }}
         />
       </Center>
-      <mesh
+      <Sight
         scale={0.5}
         position={[0, 0.06, 0.69]}
         rotation={[-1.46, 0, 0]}
-        onPointerEnter={() => {
-          setShowVideo(true);
-        }}
-        onPointerLeave={() => {
-          setShowVideo(false);
-        }}
-        visible={showSight}
-      >
-        <coneGeometry args={[1, 2, 4, 1, true]} />
-        <meshStandardMaterial
-          color="blue"
-          transparent
-          opacity={0.2}
-          side={THREE.DoubleSide}
-        />
-      </mesh>
-      <VideoAnnotation src={videoSrc} show={showVideo} />
+        show={showSight || hovered}
+      />
+      {/* <VideoAnnotation src={videoSrc} show={hovered} /> */}
     </e.group>
   );
 };

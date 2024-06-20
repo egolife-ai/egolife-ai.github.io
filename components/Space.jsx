@@ -23,7 +23,8 @@ import { ControlsContext } from "@/app/page";
 const Space = () => {
   const controls = useRef();
 
-  const { allowControl, homeView, showSights } = useContext(ControlsContext);
+  const { allowControl, homeView, showSights, showWalls } =
+    useContext(ControlsContext);
 
   useControls("Helper", {
     getLookAt: button(() => {
@@ -92,11 +93,11 @@ const Space = () => {
       {/* House models */}
       <Garden />
       <Level1 visible={true} />
-      <Level1Other visible={homeView === "all"} />
-      <Level2Other visible={homeView === "all"} />
+      <Level1Other visible={true} />
+      <Level2Other visible={homeView !== "level-1"} />
       <Level2 visible={homeView !== "level-1"} />
-      <Roof visible={homeView === "all"} />
-      <Wall visible={homeView === "all"} />
+      <Roof visible={homeView === "all" && showWalls} />
+      <Wall visible={homeView === "all" && showWalls} />
 
       {/* Level 1 Cameras */}
       {[...Array(8).keys()].map((i) => (
@@ -104,6 +105,7 @@ const Space = () => {
           key={`level-1-camera-${i + 1}`}
           groupId={"Level-1"}
           id={i + 1}
+          label={i + 1}
           videoSrc={"/videos/sample-video.mp4"}
           showSight={showSights}
         />
@@ -122,6 +124,7 @@ const Space = () => {
       ))}
 
       {/* People */}
+      {/* FIXME: Glow instead? */}
       {[...Array(6).keys()].map((i) => (
         <Person
           key={`person-${i + 1}`}
@@ -136,5 +139,3 @@ const Space = () => {
 };
 
 export default Space;
-
-useGLTF.preload("egohouse.gltf");

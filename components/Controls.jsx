@@ -1,16 +1,23 @@
 import { ControlsContext } from "@/app/page";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Cctv, Home } from "lucide-react";
+import { BrickWall, Cctv, Home } from "lucide-react";
 import { useContext } from "react";
 import { Toggle } from "@/components/ui/toggle";
+import { Slider } from "@/components/ui/slider";
 
 const Controls = () => {
-  const { homeView, setHomeView, showSights, setShowSights } =
-    useContext(ControlsContext);
+  const {
+    homeView,
+    setHomeView,
+    showSights,
+    setShowSights,
+    showWalls,
+    setShowWalls,
+  } = useContext(ControlsContext);
 
   return (
-    <div className="flex gap-5 bg-yellow-50/50 p-5 backdrop-blur rounded-lg">
+    <div className="flex gap-5 rounded-lg bg-yellow-50/50 p-5 backdrop-blur border shadow-xl">
       <RadioGroup
         defaultValue="all"
         value={homeView}
@@ -32,6 +39,16 @@ const Controls = () => {
         </div>
       </RadioGroup>
 
+      {/* Toggle Walls / Roof */}
+      <Toggle
+        variant="outline"
+        pressed={showWalls}
+        onPressedChange={setShowWalls}
+      >
+        <BrickWall className="size-5" />
+      </Toggle>
+
+      {/* Toggle Sights */}
       <Toggle
         variant="outline"
         pressed={showSights}
@@ -39,6 +56,11 @@ const Controls = () => {
       >
         <Cctv className="size-5" />
       </Toggle>
+
+      <div className="flex flex-col gap-2">
+        <div>Date</div>
+        <Slider className="w-[100px]" />
+      </div>
     </div>
   );
 };

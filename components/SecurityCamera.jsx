@@ -4,17 +4,20 @@ import * as THREE from "three";
 import VideoAnnotation from "./VideoAnnotation";
 import { SecurityCameraModel } from "./SecurityCameraModel";
 import { useState } from "react";
+import Sight from "./Sight";
 
 const SecurityCamera = ({
   groupId,
   id,
+  label,
   videoSrc,
   showSight = false,
   visible = true,
 }) => {
-  const [showVideo, setShowVideo] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   return (
+    // TODO: Outline
     <e.group
       theatreKey={`${groupId} / SecurityCameraGroup-${id}`}
       visible={visible}
@@ -22,34 +25,20 @@ const SecurityCamera = ({
       <SecurityCameraModel
         onPointerEnter={(e) => {
           e.stopPropagation();
-          setShowVideo(true);
+          setHovered(true);
         }}
         onPointerLeave={(e) => {
           e.stopPropagation();
-          setShowVideo(false);
+          setHovered(false);
         }}
       />
-      <mesh
+      <Sight
         scale={0.5}
         position={[0.32, -0.17, 0.81]}
         rotation={[0.48, -1.1, 1.6]}
-        onPointerEnter={() => {
-          setShowVideo(true);
-        }}
-        onPointerLeave={() => {
-          setShowVideo(false);
-        }}
-        visible={showSight}
-      >
-        <coneGeometry args={[1, 2, 4, 1, true]} />
-        <meshStandardMaterial
-          color="green"
-          transparent
-          opacity={0.2}
-          side={THREE.DoubleSide}
-        />
-      </mesh>
-      <VideoAnnotation src={videoSrc} show={showVideo} />
+        show={showSight || hovered}
+      />
+      <VideoAnnotation src={videoSrc} show={hovered} />
     </e.group>
   );
 };

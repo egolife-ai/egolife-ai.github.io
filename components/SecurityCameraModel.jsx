@@ -8,7 +8,8 @@ Title: security camera
 */
 
 import React from "react";
-import { useGLTF } from "@react-three/drei";
+import { Outlines, useGLTF } from "@react-three/drei";
+import ModelOutlines from "./ModelOutlines";
 
 export function SecurityCameraModel({
   onPointerEnter,
@@ -24,13 +25,15 @@ export function SecurityCameraModel({
           material={materials.Material}
           onPointerEnter={onPointerEnter}
           onPointerLeave={onPointerLeave}
-        />
-        <mesh
+        >
+          <ModelOutlines thickness={0.2} />
+        </mesh>
+        {/* <mesh
           geometry={nodes.Object_5.geometry}
           material={materials["Material.001"]}
           onPointerEnter={onPointerEnter}
           onPointerLeave={onPointerLeave}
-        />
+        /> */}
       </group>
     </group>
   );

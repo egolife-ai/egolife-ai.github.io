@@ -18,10 +18,19 @@ export default function Home() {
   const [homeView, setHomeView] = useState("all");
   const [allowControl, setAllowControl] = useState(false);
   const [showSights, setShowSights] = useState(false);
+  const [showWalls, setShowWalls] = useState(true);
 
   return (
     <ControlsContext.Provider
-      value={{ homeView, setHomeView, allowControl, showSights, setShowSights }}
+      value={{
+        homeView,
+        setHomeView,
+        allowControl,
+        showSights,
+        setShowSights,
+        showWalls,
+        setShowWalls,
+      }}
     >
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
         {/* Navbar */}
