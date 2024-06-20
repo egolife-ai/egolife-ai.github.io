@@ -5,6 +5,7 @@ import VideoAnnotation from "./VideoAnnotation";
 import { SecurityCameraModel } from "./SecurityCameraModel";
 import { useState } from "react";
 import Sight from "./Sight";
+import ModelLabel from "./ModelLabel";
 
 const SecurityCamera = ({
   groupId,
@@ -38,6 +39,7 @@ const SecurityCamera = ({
         rotation={[0.48, -1.1, 1.6]}
         show={showSight || hovered}
       />
+      <ModelLabel position={[0, 0.1, 0]}>{label}</ModelLabel>
       <VideoAnnotation src={videoSrc} show={hovered} />
     </e.group>
   );

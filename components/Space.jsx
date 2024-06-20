@@ -16,7 +16,7 @@ import Wall from "./house/Wall";
 import Dog from "./Dog";
 import Bear from "./Bear";
 import { useControls, button } from "leva";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import cameraPositions from "@/lib/cameraPositions";
 import { ControlsContext } from "@/app/page";
 
@@ -25,6 +25,10 @@ const Space = () => {
 
   const { allowControl, homeView, showSights, showWalls } =
     useContext(ControlsContext);
+
+  const [wallOpacity, setWallOpacity] = useState(1);
+  const [roofOpacity, setRoofOpacity] = useState(1);
+  const [level2Opacity, setLevel2Opacity] = useState(1);
 
   useControls("Helper", {
     getLookAt: button(() => {
@@ -41,6 +45,25 @@ const Space = () => {
 
   useEffect(() => {
     controls.current.setLookAt(...cameraPositions[homeView], true);
+  }, [homeView]);
+
+  // Animate roofs and walls
+  useEffect(() => {
+    if (showWalls) {
+      setWallOpacity(1);
+      setRoofOpacity(1);
+    } else {
+      setWallOpacity(0);
+      setRoofOpacity(0);
+    }
+  }, [showWalls]);
+
+  useEffect(() => {
+    if (homeView === "level-1") {
+      setLevel2Opacity(0);
+    } else {
+      setLevel2Opacity(1);
+    }
   }, [homeView]);
 
   return (
@@ -94,10 +117,12 @@ const Space = () => {
       <Garden />
       <Level1 visible={true} />
       <Level1Other visible={true} />
-      <Level2Other visible={homeView !== "level-1"} />
-      <Level2 visible={homeView !== "level-1"} />
-      <Roof visible={homeView === "all" && showWalls} />
-      <Wall visible={homeView === "all" && showWalls} />
+      {/* <Level2Other visible={homeView !== "level-1"} /> */}
+      <Level2Other opacity={level2Opacity} />
+      <Level2 opacity={level2Opacity} />
+      {/* <Roof visible={homeView === "all" && showWalls} /> */}
+      <Roof opacity={roofOpacity} />
+      <Wall opacity={wallOpacity} />
 
       {/* Level 1 Cameras */}
       {[...Array(8).keys()].map((i) => (
@@ -117,6 +142,7 @@ const Space = () => {
           key={`level-2-camera-${i + 1}`}
           groupId={"Level-2"}
           id={i + 1}
+          label={i + 1}
           videoSrc={"/videos/sample-video.mp4"}
           visible={homeView !== "level-1"}
           showSight={showSights}
@@ -129,6 +155,7 @@ const Space = () => {
         <Person
           key={`person-${i + 1}`}
           id={i + 1}
+          label={i + 1}
           videoSrc={"/videos/sample-video.mp4"}
           model={i < 2 ? Duck : i < 4 ? Dog : Bear}
           showSight={showSights}

@@ -10,7 +10,7 @@ import useGltfKtx2 from "@/lib/useGltfKtx2";
 export default function Level1(props) {
   const { gl } = useThree();
 
-  const { nodes, materials } = useGltfKtx2("/models/house/level1_v3.glb", gl);
+  const { nodes, materials, scene } = useGltfKtx2("/models/house/level1_v3.glb", gl);
 
   return (
     <group {...props} dispose={null}>

@@ -6,14 +6,17 @@ Command: npx gltfjsx@6.2.18 public/models/house/level2_other_v3.glb
 import React, { useRef } from "react";
 import { useThree } from "@react-three/fiber";
 import useGltfKtx2 from "@/lib/useGltfKtx2";
+import useAnimateModelOpacity from "@/lib/useAnimateModelOpacity";
 
-export default function Level2Other(props) {
+export default function Level2Other({ opacity = 1, ...props }) {
   const { gl } = useThree();
 
   const { nodes, materials, scene } = useGltfKtx2(
     "/models/house/level2_other_v3.glb",
-    gl
+    gl,
   );
+
+  useAnimateModelOpacity(opacity, scene);
 
   return <primitive object={scene} {...props} />;
 

@@ -1,12 +1,14 @@
-import { Center } from "@react-three/drei";
+import { Billboard, Center, Text } from "@react-three/drei";
 import { editable as e } from "@theatre/r3f";
 import * as THREE from "three";
 import VideoAnnotation from "./VideoAnnotation";
 import { useState } from "react";
 import Sight from "./Sight";
+import ModelLabel from "./ModelLabel";
 
 const Person = ({
   id,
+  label,
   videoSrc,
   model: Model,
   showSight = false,
@@ -34,7 +36,8 @@ const Person = ({
         rotation={[-1.46, 0, 0]}
         show={showSight || hovered}
       />
-      {/* <VideoAnnotation src={videoSrc} show={hovered} /> */}
+      <ModelLabel>{label}</ModelLabel>
+      <VideoAnnotation src={videoSrc} show={hovered} />
     </e.group>
   );
 };
