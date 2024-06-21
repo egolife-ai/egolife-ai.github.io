@@ -21,12 +21,15 @@ const VideoAnnotation = ({ src, show }) => {
   // }, [show]);
 
   return (
-    <Html
-      style={{
-        pointerEvents: "none",
-      }}
-    >
-      {/* <motion.div
+    // FIXME: Should hide the entire Html; performance reasons
+    <>
+      {show && (
+        <Html
+          style={{
+            pointerEvents: "none",
+          }}
+        >
+          {/* <motion.div
         className="bg-black px-2 py-2"
         style={{
           transform: "translate3d(calc(0% + 40px), 0, 0)",
@@ -46,41 +49,41 @@ const VideoAnnotation = ({ src, show }) => {
         </div>
       </motion.div> */}
 
-      <AnimatePresence>
-        {show && (
-          <motion.div
-            className="h-[200px] w-[300px] overflow-hidden rounded-lg border-2 shadow-xl origin-top-left"
-            initial={{
-              opacity: 0,
-              scale: 0,
-            }}
-            animate={{
-              // opacity: show ? 1 : 0,
-              opacity: 1,
-              scale: 1
-            }}
-            exit={{
-              opacity: 0,
-              scale: 0,
-            }}
-            transition={{
-              type: "spring",
-              bounce: 0.3
-            }}
-          >
-            <video
-              ref={videoRef}
-              muted
-              autoPlay
-              className="h-full w-full object-cover"
-            >
-              <source src={src} type="video/mp4" />
-            </video>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          <AnimatePresence>
+            {show && (
+              <motion.div
+                className="h-[200px] w-[300px] origin-top-left overflow-hidden rounded-lg border-2 shadow-xl"
+                initial={{
+                  opacity: 0,
+                  scale: 0,
+                }}
+                animate={{
+                  // opacity: show ? 1 : 0,
+                  opacity: 1,
+                  scale: 1,
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 0,
+                }}
+                transition={{
+                  type: "spring",
+                  bounce: 0.3,
+                }}
+              >
+                <video
+                  ref={videoRef}
+                  muted
+                  autoPlay
+                  className="h-full w-full object-cover"
+                >
+                  <source src={src} type="video/mp4" />
+                </video>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-      {/* <Tooltip open={isOpen} onOpenChange={setIsOpen}>
+          {/* <Tooltip open={isOpen} onOpenChange={setIsOpen}>
         <TooltipContent>
           <div className="grid h-[200px] w-[300px] place-items-center">
             <video ref={videoRef} muted>
@@ -89,7 +92,9 @@ const VideoAnnotation = ({ src, show }) => {
           </div>
         </TooltipContent>
       </Tooltip> */}
-    </Html>
+        </Html>
+      )}
+    </>
   );
 };
 

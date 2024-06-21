@@ -18,16 +18,23 @@ import Bear from "./Bear";
 import { useControls, button } from "leva";
 import { useContext, useEffect, useRef, useState } from "react";
 import cameraPositions from "@/lib/cameraPositions";
-import { ControlsContext } from "@/app/page";
+import { ControlsContext, SceneContext } from "@/app/page";
+import { useFrame } from "@react-three/fiber";
+import { DEG2RAD } from "three/src/math/MathUtils";
 
 const Space = () => {
   const controls = useRef();
 
   const { allowControl, homeView, showSights, showWalls } =
     useContext(ControlsContext);
+  // const { wallOpacity, setWallOpacity, roofOpacity, setRoofOpacity } =
+  //   useContext(SceneContext);
 
   const [wallOpacity, setWallOpacity] = useState(1);
   const [roofOpacity, setRoofOpacity] = useState(1);
+
+  const [autoRotate, setAutoRotate] = useState(true);
+
   const [level2Opacity, setLevel2Opacity] = useState(1);
 
   useControls("Helper", {
@@ -65,6 +72,13 @@ const Space = () => {
       setLevel2Opacity(1);
     }
   }, [homeView]);
+
+  useFrame((state, delta) => {
+    // Auto rotate
+    if (autoRotate) {
+      controls.current.azimuthAngle += 5 * delta * DEG2RAD;
+    }
+  });
 
   return (
     <>

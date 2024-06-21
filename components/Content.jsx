@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 const Content = () => {
   return (
-    <div className="z-10 mt-[100vh] mb-[100vh] w-full max-w-5xl space-y-14 rounded bg-yellow-50 p-10 shadow-xl">
+    <div className="z-10 mt-[100vh] mb-[100vh] w-full max-w-4xl space-y-14 rounded bg-yellow-50 p-10 shadow-xl text-xl">
       <Section title="Dataset">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur
