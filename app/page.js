@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import NavItem from "@/components/NavItem";
 import { Pointer, X } from "lucide-react";
 import Content from "@/components/Content";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import Controls from "@/components/Controls";
 import IntroText from "@/components/IntroText";
 
@@ -22,9 +22,18 @@ export default function Home() {
   const [allowControl, setAllowControl] = useState(false);
   const [showSights, setShowSights] = useState(false);
   const [showWalls, setShowWalls] = useState(true);
+  const [autoRotate, setAutoRotate] = useState(true);
 
   // const [wallOpacity, setWallOpacity] = useState(1);
   // const [roofOpacity, setRoofOpacity] = useState(1);
+
+  useEffect(() => {
+    if (allowControl) {
+      setAutoRotate(false);
+    } else {
+      setAutoRotate(true);
+    }
+  }, [allowControl]);
 
   return (
     <ControlsContext.Provider
@@ -37,6 +46,7 @@ export default function Home() {
         showWalls,
         setShowWalls,
         setShowControls,
+        autoRotate,
       }}
     >
       {/* <SceneContext.Provider
@@ -128,5 +138,3 @@ export default function Home() {
     </ControlsContext.Provider>
   );
 }
-
-const animateBlur = {};

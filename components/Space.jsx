@@ -25,15 +25,13 @@ import { DEG2RAD } from "three/src/math/MathUtils";
 const Space = () => {
   const controls = useRef();
 
-  const { allowControl, homeView, showSights, showWalls } =
+  const { allowControl, homeView, showSights, showWalls, autoRotate } =
     useContext(ControlsContext);
   // const { wallOpacity, setWallOpacity, roofOpacity, setRoofOpacity } =
   //   useContext(SceneContext);
 
   const [wallOpacity, setWallOpacity] = useState(1);
   const [roofOpacity, setRoofOpacity] = useState(1);
-
-  const [autoRotate, setAutoRotate] = useState(true);
 
   const [level2Opacity, setLevel2Opacity] = useState(1);
 

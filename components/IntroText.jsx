@@ -52,7 +52,7 @@ const IntroText = () => {
         },
       },
       {
-        onComplete: () => {
+        onStart: () => {
           setShowControls(true);
         },
         onReverseComplete: () => {
@@ -73,7 +73,7 @@ const IntroText = () => {
           endTrigger: scrollContainer.current,
           end: "bottom top",
           scrub: 1,
-          markers: true,
+          // markers: true,
         },
       });
 
