@@ -104,7 +104,7 @@ const IntroText = () => {
           </div>
         </div>
       </div>
-      <div ref={textContainer} className="relative z-10 mb-[50vh] mt-[100vh]">
+      <div ref={textContainer} className="relative z-10 mb-[50vh] mt-[100vh] pointer-events-none">
         <Text>
           <TextHeader>Earth Day Event (April 15 – 22)</TextHeader>
           <p>
@@ -160,7 +160,7 @@ function Text({ children }) {
     <div className="h-[100vh]">
       <motion.div
         // className="absolute left-0 top-0 rounded bg-yellow-50/80 px-5 py-5 text-xl opacity-0"
-        className="text-container max-w-xl rounded bg-yellow-50/80 px-5 py-5 text-xl pointer-events-none"
+        className="text-container max-w-xl rounded bg-yellow-50/80 px-5 py-5 text-xl"
         // style={{
         //   filter: "blur(4px)",
         //   translateY: textY,
