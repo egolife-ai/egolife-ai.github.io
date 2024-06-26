@@ -74,7 +74,7 @@ const Space = () => {
   useFrame((state, delta) => {
     // Auto rotate
     if (autoRotate) {
-      controls.current.azimuthAngle += 5 * delta * DEG2RAD;
+      // controls.current.azimuthAngle += 5 * delta * DEG2RAD;
     }
   });
 
@@ -129,10 +129,8 @@ const Space = () => {
       <Garden />
       <Level1 visible={true} />
       <Level1Other visible={true} />
-      {/* <Level2Other visible={homeView !== "level-1"} /> */}
       <Level2Other opacity={level2Opacity} />
       <Level2 opacity={level2Opacity} />
-      {/* <Roof visible={homeView === "all" && showWalls} /> */}
       <Roof opacity={roofOpacity} />
       <Wall opacity={wallOpacity} />
 

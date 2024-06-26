@@ -10,7 +10,12 @@ import useGltfKtx2 from "@/lib/useGltfKtx2";
 export default function Garden(props) {
   const { gl } = useThree();
 
-  const { nodes, materials } = useGltfKtx2("/models/house/garden_v3.glb", gl);
+  const { nodes, materials, scene } = useGltfKtx2(
+    "/models/house/garden_v3.glb",
+    gl,
+  );
+
+  return <primitive object={scene} {...props} />;
 
   return (
     <group {...props} dispose={null}>

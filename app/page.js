@@ -67,8 +67,8 @@ export default function Home() {
         >
           <nav className="grid w-full place-items-center border-b border-white backdrop-blur">
             <ul className="flex gap-8">
-              <NavItem>Dataset</NavItem>
-              <NavItem>Paper</NavItem>
+              <NavItem href="">Paper</NavItem>
+              <NavItem href="">Blog</NavItem>
               <li>
                 <h1>
                   <Image
@@ -79,8 +79,8 @@ export default function Home() {
                   />
                 </h1>
               </li>
-              <NavItem>Blog</NavItem>
-              <NavItem>Team</NavItem>
+              <NavItem href="">Data</NavItem>
+              <NavItem href="">Code</NavItem>
             </ul>
           </nav>
 
@@ -96,7 +96,7 @@ export default function Home() {
         <AnimatePresence mode="popLayout">
           {showControls && (
             <motion.div
-              className="fixed left-20 top-40 z-10"
+              className="fixed left-20 top-40 z-20"
               initial={{ opacity: 0, filter: "blur(4px)" }}
               animate={{ opacity: 1, filter: "blur(0)" }}
               exit={{ opacity: 0, filter: "blur(4px)" }}
@@ -110,7 +110,7 @@ export default function Home() {
         <AnimatePresence mode="popLayout">
           {showControls && (
             <motion.button
-              className="fixed left-1/2 top-20 z-10 -translate-x-3 translate-y-full rounded-full border bg-yellow-50 p-2 shadow"
+              className="fixed left-1/2 top-20 z-20 -translate-x-3 translate-y-full rounded-full border bg-yellow-50 p-2 shadow animate-pulse"
               onClick={() => {
                 setAllowControl(!allowControl);
               }}
@@ -132,7 +132,7 @@ export default function Home() {
 
         {/* Content */}
         <IntroText />
-        <Content />
+        {/* <Content /> */}
       </main>
       {/* </SceneContext.Provider> */}
     </ControlsContext.Provider>

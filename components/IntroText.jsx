@@ -4,6 +4,7 @@ import { useContext, useMemo, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
 import { ControlsContext, SceneContext } from "@/app/page";
+import { Mouse, Pointer } from "lucide-react";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -12,7 +13,6 @@ const textY = 100;
 
 const IntroText = () => {
   const textContainer = useRef();
-  const scrollContainer = useRef();
 
   const { setShowWalls, setHomeView, setShowSights, setShowControls } =
     useContext(ControlsContext);
@@ -20,77 +20,58 @@ const IntroText = () => {
   const tlProps = useMemo(() => {
     return [
       {
-        onComplete: () => {
+        onEnter: () => {
           setShowWalls(false);
         },
-        onReverseComplete: () => {
+        onLeaveBack: () => {
           setShowWalls(true);
         },
       },
       {
-        onComplete: () => {
+        onEnter: () => {
           setHomeView("level-1");
         },
-        onReverseComplete: () => {
+        onLeaveBack: () => {
           setHomeView("all");
         },
       },
       {
-        onComplete: () => {
+        onEnter: () => {
           setHomeView("level-2");
         },
-        onReverseComplete: () => {
+        onLeaveBack: () => {
           setHomeView("level-1");
         },
       },
       {
-        onComplete: () => {
+        onEnter: () => {
           setHomeView("all");
         },
-        onReverseComplete: () => {
+        onLeaveBack: () => {
           setHomeView("level-2");
         },
-      },
-      {
-        onStart: () => {
+        onLeave: () => {
           setShowControls(true);
         },
-        onReverseComplete: () => {
+        onEnterBack: () => {
           setShowControls(false);
         },
+        end: "bottom top",
       },
     ];
   }, []);
 
   useGSAP(
     () => {
-      const targets = gsap.utils.toArray("div", textContainer.current);
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: scrollContainer.current,
-          start: "top top",
-          endTrigger: scrollContainer.current,
-          end: "bottom top",
-          scrub: 1,
-          // markers: true,
-        },
-      });
+      const targets = gsap.utils.toArray(
+        ".text-container",
+        textContainer.current,
+      );
 
       targets.forEach((el, i) => {
-        if (i !== 0) {
-          tl.to(el, {
-            opacity: 1,
-            y: 0,
-            filter: "blur(0)",
-          });
-        }
-
-        tl.to(el, {
-          opacity: 0,
-          y: -textY,
-          filter: "blur(4px)",
-          delay: 1,
+        ScrollTrigger.create({
+          trigger: el,
+          start: "top 90%",
           ...tlProps[i],
         });
       });
@@ -100,36 +81,74 @@ const IntroText = () => {
 
   return (
     <>
-      <div ref={scrollContainer} id="intro" className="h-[500vh] w-full"></div>
-      <div ref={textContainer} className="fixed top-[150px] w-full max-w-lg">
-        <div className="mt-[50px] text-center text-2xl font-medium">
-          A diverse, large-scale multi-modal, multi-view, continuous egocentric
-          video dataset and benchmark collected over a month, capturing X hours
-          of daily-life activity video.
+      {/* <div className="fixed top-[150px] w-full max-w-lg">
+        <div className="mt-[25px] text-center text-2xl font-medium">
+          <p className="mb-5 font-bold">Welcome to the EgoLife Project!</p>
+          <p>
+            An unprecedented 60h per video, interpersonal, multi-modal,
+            multi-view, daily-life egocentric video dataset and benchmark.
+            (scroll down for more info)
+          </p>
         </div>
+      </div> */}
+      <div className="z-10 w-full max-w-lg">
+        <div className="mt-[75px] text-center text-2xl font-medium">
+          <p className="mb-5 font-bold">Welcome to the EgoLife Project!</p>
+          <p>
+            An unprecedented 60h per video, interpersonal, multi-modal,
+            multi-view, daily-life egocentric video dataset and benchmark.
+          </p>
+          <div className="mt-5 flex animate-bounce flex-col items-center justify-center gap-2 text-stone-500">
+            <Mouse className="" />
+            <div className="text-xs uppercase">Scroll Down</div>
+          </div>
+        </div>
+      </div>
+      <div ref={textContainer} className="relative z-10 mb-[50vh] mt-[100vh]">
         <Text>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Exercitationem, odio illo magnam cumque facilis voluptatibus sed
-          mollitia laudantium eaque ipsa tempore laboriosam optio dolorum
-          adipisci non, minus nobis eum earum.
+          <TextHeader>Earth Day Event (April 15 – 22)</TextHeader>
+          <p>
+            The project invites 6 volunteers live together in the EgoHouse for 7
+            days, from April 15 – 22, with a concrete mission of planning and
+            hosting an Earth Day party. This goal drives them to organize,
+            discuss, decorate, prepare, and survive the week.
+          </p>
         </Text>
         <Text>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Exercitationem, odio illo magnam cumque facilis voluptatibus sed
-          mollitia laudantium eaque ipsa tempore laboriosam optio dolorum
-          adipisci non, minus nobis eum earum.
+          <TextHeader>6 Extremely Long Ego Videos</TextHeader>
+          <p>
+            6 volunteers each capture 60 hours of coherent egocentric video,
+            showcasing extensively correlated daily-life content across
+            interpersonal interactions and extended timelines.
+          </p>
+          <InteractionPrompt>
+            Hover on each character to see demo samples
+          </InteractionPrompt>
         </Text>
         <Text>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Exercitationem, odio illo magnam cumque facilis voluptatibus sed
-          mollitia laudantium eaque ipsa tempore laboriosam optio dolorum
-          adipisci non, minus nobis eum earum.
+          <TextHeader>15 Exo Cameras with Sync</TextHeader>
+          <p>
+            Egocentric videos are synchronized with footage from 15 GoPro
+            cameras strategically placed throughout the house, providing
+            multi-view references.
+          </p>
+          <InteractionPrompt>
+            Hover on each camera to see demo samples
+          </InteractionPrompt>
         </Text>
         <Text>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Exercitationem, odio illo magnam cumque facilis voluptatibus sed
-          mollitia laudantium eaque ipsa tempore laboriosam optio dolorum
-          adipisci non, minus nobis eum earum.
+          <TextHeader>The EgoLife Dataset</TextHeader>
+          <p>
+            The EgoLife dataset features extremely long-term temporal
+            correlations and interpersonal interactions, with extensive
+            annotations including transcriptions, Q&A pairs, and dense captions.
+            We also provide an QA set to benchmark the extremely long ego video
+            tasks. The dataset also support the training of our EgoLLaVA model.
+          </p>
+          <InteractionPrompt>
+            Now please scroll down and click to explore the EgoHouse to play
+            with the EgoLife Project!
+          </InteractionPrompt>
         </Text>
       </div>
     </>
@@ -138,15 +157,31 @@ const IntroText = () => {
 
 function Text({ children }) {
   return (
-    <motion.div
-      className="absolute left-0 top-0 rounded bg-yellow-50/80 px-5 py-5 text-xl opacity-0"
-      style={{
-        filter: "blur(4px)",
-        translateY: textY,
-      }}
-    >
+    <div className="h-[100vh]">
+      <motion.div
+        // className="absolute left-0 top-0 rounded bg-yellow-50/80 px-5 py-5 text-xl opacity-0"
+        className="text-container max-w-xl rounded bg-yellow-50/80 px-5 py-5 text-xl pointer-events-none"
+        // style={{
+        //   filter: "blur(4px)",
+        //   translateY: textY,
+        // }}
+      >
+        {children}
+      </motion.div>
+    </div>
+  );
+}
+
+function TextHeader({ children }) {
+  return <h3 className="mb-2 text-center font-bold">{children}</h3>;
+}
+
+function InteractionPrompt({ children }) {
+  return (
+    <div className="mx-auto mt-4 flex max-w-sm items-center justify-center gap-2 text-base text-stone-500">
+      <Pointer className="size-6 flex-none animate-pulse" />
       {children}
-    </motion.div>
+    </div>
   );
 }
 
