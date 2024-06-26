@@ -12,6 +12,7 @@ import { Leva } from "leva";
 import projectState from "@/data/egolife.theatre-project-state.json";
 
 const isProd = process.env.NODE_ENV === "production";
+// const isProd = false
 
 const project = getProject(
   "egolife",
