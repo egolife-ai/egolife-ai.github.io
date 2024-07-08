@@ -9,6 +9,7 @@ import Content from "@/components/Content";
 import { createContext, useEffect, useState } from "react";
 import Controls from "@/components/Controls";
 import IntroText from "@/components/IntroText";
+import { cn } from "@/lib/utils";
 
 // TODO: Aesthetic like Sims city
 // TODO: Controls can look like a video game
@@ -23,6 +24,10 @@ export default function Home() {
   const [showSights, setShowSights] = useState(false);
   const [showWalls, setShowWalls] = useState(true);
   const [autoRotate, setAutoRotate] = useState(true);
+  const [showDemo, setShowDemo] = useState(false);
+
+  const [showToggleWalls, setShowToggleWalls] = useState(false);
+  const [showToggleSights, setShowToggleSights] = useState(false);
 
   // const [wallOpacity, setWallOpacity] = useState(1);
   // const [roofOpacity, setRoofOpacity] = useState(1);
@@ -40,6 +45,7 @@ export default function Home() {
       value={{
         homeView,
         setHomeView,
+        setAllowControl,
         allowControl,
         showSights,
         setShowSights,
@@ -47,6 +53,12 @@ export default function Home() {
         setShowWalls,
         setShowControls,
         autoRotate,
+        setShowToggleWalls,
+        showToggleWalls,
+        setShowToggleSights,
+        showToggleSights,
+        setShowDemo,
+        showDemo,
       }}
     >
       {/* <SceneContext.Provider
@@ -96,7 +108,7 @@ export default function Home() {
         <AnimatePresence mode="popLayout">
           {showControls && (
             <motion.div
-              className="fixed left-20 top-40 z-20"
+              className="fixed left-10 top-40 z-20"
               initial={{ opacity: 0, filter: "blur(4px)" }}
               animate={{ opacity: 1, filter: "blur(0)" }}
               exit={{ opacity: 0, filter: "blur(4px)" }}
@@ -107,10 +119,13 @@ export default function Home() {
         </AnimatePresence>
 
         {/* Click to allow control */}
-        <AnimatePresence mode="popLayout">
+        {/* <AnimatePresence mode="popLayout">
           {showControls && (
             <motion.button
-              className="fixed left-1/2 top-20 z-20 -translate-x-3 translate-y-full rounded-full border bg-yellow-50 p-2 shadow animate-pulse"
+              className={cn(
+                "fixed left-1/2 top-24 z-20 -translate-x-3 translate-y-full animate-pulse rounded-full border bg-yellow-50 p-2 shadow",
+                !allowControl ? "animate-pulse" : "",
+              )}
               onClick={() => {
                 setAllowControl(!allowControl);
               }}
@@ -121,11 +136,14 @@ export default function Home() {
               {allowControl ? (
                 <X className="size-10" />
               ) : (
-                <Pointer className="size-10" />
+                <div className="flex items-center gap-2 px-2 font-bold">
+                  <Pointer className="size-10" />
+                  <div>Allow zoom and panning</div>
+                </div>
               )}
             </motion.button>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
 
         {/* Three.js Scene */}
         <Scene />

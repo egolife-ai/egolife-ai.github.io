@@ -14,7 +14,7 @@ const textY = 100;
 const IntroText = () => {
   const textContainer = useRef();
 
-  const { setShowWalls, setHomeView, setShowSights, setShowControls } =
+  const { setShowWalls, setHomeView, setShowSights, setShowControls, setShowToggleWalls } =
     useContext(ControlsContext);
 
   const tlProps = useMemo(() => {
@@ -22,9 +22,13 @@ const IntroText = () => {
       {
         onEnter: () => {
           setShowWalls(false);
+          setShowControls(true);
+          // setShowToggleWalls(true)
         },
         onLeaveBack: () => {
           setShowWalls(true);
+          setShowControls(false);
+          // setShowToggleWalls(false)
         },
       },
       {
@@ -51,10 +55,10 @@ const IntroText = () => {
           setHomeView("level-2");
         },
         onLeave: () => {
-          setShowControls(true);
+          // setShowControls(true);
         },
         onEnterBack: () => {
-          setShowControls(false);
+          // setShowControls(false);
         },
         end: "bottom top",
       },
@@ -91,8 +95,8 @@ const IntroText = () => {
           </p>
         </div>
       </div> */}
-      <div className="z-10 w-full max-w-lg">
-        <div className="mt-[75px] text-center text-2xl font-medium">
+      <div className="z-10 w-full max-w-xl">
+        <div className="mt-[75px] rounded bg-yellow-50/80 px-5 py-5 text-center text-2xl font-medium">
           <p className="mb-5 font-bold">Welcome to the EgoLife Project!</p>
           <p>
             An unprecedented 60h per video, interpersonal, multi-modal,
@@ -104,7 +108,10 @@ const IntroText = () => {
           </div>
         </div>
       </div>
-      <div ref={textContainer} className="relative z-10 mb-[50vh] mt-[100vh] pointer-events-none">
+      <div
+        ref={textContainer}
+        className="pointer-events-none relative z-10 mb-[50vh] mt-[100vh]"
+      >
         <Text>
           <TextHeader>Earth Day Event (April 15 – 22)</TextHeader>
           <p>
@@ -145,10 +152,16 @@ const IntroText = () => {
             We also provide an QA set to benchmark the extremely long ego video
             tasks. The dataset also support the training of our EgoLLaVA model.
           </p>
-          <InteractionPrompt>
+          {/* <InteractionPrompt>
             Now please scroll down and click to explore the EgoHouse to play
             with the EgoLife Project!
-          </InteractionPrompt>
+          </InteractionPrompt> */}
+        </Text>
+        <Text>
+          <TextHeader>
+            Now please scroll down and click to explore the EgoHouse to play
+            with the EgoLife Project!
+          </TextHeader>
         </Text>
       </div>
     </>

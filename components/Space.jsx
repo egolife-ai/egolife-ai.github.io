@@ -21,6 +21,7 @@ import cameraPositions from "@/lib/cameraPositions";
 import { ControlsContext, SceneContext } from "@/app/page";
 import { useFrame } from "@react-three/fiber";
 import { DEG2RAD } from "three/src/math/MathUtils";
+import names from "@/data/volunteerNames";
 
 const Space = () => {
   const controls = useRef();
@@ -74,7 +75,7 @@ const Space = () => {
   useFrame((state, delta) => {
     // Auto rotate
     if (autoRotate) {
-      controls.current.azimuthAngle += 5 * delta * DEG2RAD;
+      // controls.current.azimuthAngle += 5 * delta * DEG2RAD;
     }
   });
 
@@ -165,7 +166,8 @@ const Space = () => {
         <Person
           key={`person-${i + 1}`}
           id={i + 1}
-          label={i + 1}
+          // label={i + 1}
+          label={names[i].cn}
           videoSrc={"/videos/sample-video.mp4"}
           model={i < 2 ? Duck : i < 4 ? Dog : Bear}
           showSight={showSights}
