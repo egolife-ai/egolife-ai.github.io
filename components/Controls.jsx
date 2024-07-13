@@ -7,6 +7,7 @@ import { Toggle } from "@/components/ui/toggle";
 import { Slider } from "@/components/ui/slider";
 import { motion, MotionConfig } from "framer-motion";
 import { cn } from "@/lib/utils";
+import DatePicker from "./DatePicker";
 
 const Controls = () => {
   const {
@@ -19,11 +20,13 @@ const Controls = () => {
     allowControl,
     setAllowControl,
     showDemo,
-    setShowDemo
+    setShowDemo,
+    videoDate,
+    setVideoDate,
   } = useContext(ControlsContext);
 
   return (
-    <div className="flex items-center gap-5 rounded-lg border bg-yellow-50/50 p-3 shadow-xl backdrop-blur">
+    <div className="flex items-center gap-8 rounded-lg border bg-yellow-50/50 p-3 shadow-xl backdrop-blur">
       <div className="flex flex-col gap-2">
         {/* Toggle Walls / Roof */}
 
@@ -53,7 +56,7 @@ const Controls = () => {
 
         {/* Toggle Sights */}
         {/* <MotionDiv show={showToggleSights}> */}
-        <InputGroup label="Show All Videos">
+        {/* <InputGroup label="Show All Videos">
           <Toggle
             variant="outline"
             pressed={showSights}
@@ -62,7 +65,7 @@ const Controls = () => {
           >
             <Cctv className="size-4" />
           </Toggle>
-        </InputGroup>
+        </InputGroup> */}
         {/* </MotionDiv> */}
       </div>
 
@@ -90,8 +93,9 @@ const Controls = () => {
       </RadioGroup>
 
       <div className="flex flex-col gap-2">
-        <div>Date</div>
-        <Slider className="w-[100px]" />
+        {/* <div>Date</div>
+        <Slider className="w-[100px]" /> */}
+        <DatePicker value={videoDate} onChange={setVideoDate} />
       </div>
 
       <motion.button
@@ -110,8 +114,8 @@ const Controls = () => {
         {allowControl ? (
           <X className="size-10" />
         ) : (
-          <div className="flex items-center gap-2 px-2 font-bold">
-            <Pointer className="size-7" />
+          <div className="flex items-center gap-2 px-2 text-sm font-bold">
+            <Pointer className="size-5" />
             <div>Allow zoom and panning</div>
           </div>
         )}

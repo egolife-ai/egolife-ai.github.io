@@ -22,14 +22,25 @@ import { ControlsContext, SceneContext } from "@/app/page";
 import { useFrame } from "@react-three/fiber";
 import { DEG2RAD } from "three/src/math/MathUtils";
 import names from "@/data/volunteerNames";
+import personPositions from "@/data/personPositions";
 
 const Space = () => {
   const controls = useRef();
 
-  const { allowControl, homeView, showSights, showWalls, autoRotate } =
-    useContext(ControlsContext);
-  // const { wallOpacity, setWallOpacity, roofOpacity, setRoofOpacity } =
-  //   useContext(SceneContext);
+  const {
+    allowControl,
+    homeView,
+    showSights,
+    showWalls,
+    autoRotate,
+    showPersonVideos,
+    showLevel2Videos,
+    showDemo,
+  } = useContext(ControlsContext);
+
+  const selectedPersonPositions = showDemo
+    ? personPositions.demo
+    : personPositions.default;
 
   const [wallOpacity, setWallOpacity] = useState(1);
   const [roofOpacity, setRoofOpacity] = useState(1);
@@ -157,6 +168,7 @@ const Space = () => {
           videoSrc={"/videos/sample-video.mp4"}
           visible={homeView !== "level-1"}
           showSight={showSights}
+          showVideo={showLevel2Videos}
         />
       ))}
 
@@ -167,10 +179,13 @@ const Space = () => {
           key={`person-${i + 1}`}
           id={i + 1}
           // label={i + 1}
-          label={names[i].cn}
+          label={names[i].en}
           videoSrc={"/videos/sample-video.mp4"}
           model={i < 2 ? Duck : i < 4 ? Dog : Bear}
           showSight={showSights}
+          showVideo={showPersonVideos}
+          position={selectedPersonPositions[i].position}
+          rotation={selectedPersonPositions[i].rotation}
         />
       ))}
     </>

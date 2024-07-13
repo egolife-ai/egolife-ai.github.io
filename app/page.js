@@ -25,12 +25,18 @@ export default function Home() {
   const [showWalls, setShowWalls] = useState(true);
   const [autoRotate, setAutoRotate] = useState(true);
   const [showDemo, setShowDemo] = useState(false);
-
+  const [showPersonVideos, setShowPersonVideos] = useState(false);
+  const [showLevel2Videos, setShowLevel2Videos] = useState(false);
   const [showToggleWalls, setShowToggleWalls] = useState(false);
   const [showToggleSights, setShowToggleSights] = useState(false);
+  const [interactiveSection, setInteractiveSection] = useState(false);
+  const [videoDate, setVideoDate] = useState();
+
 
   // const [wallOpacity, setWallOpacity] = useState(1);
   // const [roofOpacity, setRoofOpacity] = useState(1);
+
+  console.log(showLevel2Videos)
 
   useEffect(() => {
     if (allowControl) {
@@ -59,6 +65,14 @@ export default function Home() {
         showToggleSights,
         setShowDemo,
         showDemo,
+        showPersonVideos,
+        setShowPersonVideos,
+        showLevel2Videos,
+        setShowLevel2Videos,
+        setInteractiveSection,
+        interactiveSection,
+        videoDate,
+        setVideoDate
       }}
     >
       {/* <SceneContext.Provider

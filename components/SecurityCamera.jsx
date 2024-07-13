@@ -3,9 +3,10 @@ import { editable as e } from "@theatre/r3f";
 import * as THREE from "three";
 import VideoAnnotation from "./VideoAnnotation";
 import { SecurityCameraModel } from "./SecurityCameraModel";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Sight from "./Sight";
 import ModelLabel from "./ModelLabel";
+import { ControlsContext } from "@/app/page";
 
 const SecurityCamera = ({
   groupId,
@@ -14,8 +15,18 @@ const SecurityCamera = ({
   videoSrc,
   showSight = false,
   visible = true,
+  showVideo = false,
 }) => {
   const [hovered, setHovered] = useState(false);
+
+  const { setShowLevel2Videos, homeView, interactiveSection } =
+    useContext(ControlsContext);
+
+  useEffect(() => {
+    if (!interactiveSection && homeView === "level-2") {
+      setShowLevel2Videos(!hovered);
+    }
+  }, [hovered, homeView, interactiveSection]);
 
   return (
     // TODO: Outline
@@ -40,7 +51,7 @@ const SecurityCamera = ({
         show={showSight || hovered}
       />
       <ModelLabel position={[0, 0.1, 0]}>{label}</ModelLabel>
-      <VideoAnnotation src={videoSrc} show={hovered} />
+      <VideoAnnotation src={videoSrc} show={showVideo || hovered} />
     </e.group>
   );
 };

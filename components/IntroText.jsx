@@ -14,8 +14,16 @@ const textY = 100;
 const IntroText = () => {
   const textContainer = useRef();
 
-  const { setShowWalls, setHomeView, setShowSights, setShowControls, setShowToggleWalls } =
-    useContext(ControlsContext);
+  const {
+    setShowWalls,
+    setHomeView,
+    setShowSights,
+    setShowControls,
+    setShowToggleWalls,
+    setShowPersonVideos,
+    setShowLevel2Videos,
+    setInteractiveSection,
+  } = useContext(ControlsContext);
 
   const tlProps = useMemo(() => {
     return [
@@ -34,25 +42,34 @@ const IntroText = () => {
       {
         onEnter: () => {
           setHomeView("level-1");
+          setShowPersonVideos(true);
         },
         onLeaveBack: () => {
           setHomeView("all");
+          setShowPersonVideos(false);
         },
       },
       {
         onEnter: () => {
           setHomeView("level-2");
+          setShowPersonVideos(false);
+          setShowLevel2Videos(true);
         },
         onLeaveBack: () => {
           setHomeView("level-1");
+          setShowPersonVideos(true);
+          setShowLevel2Videos(false);
         },
       },
       {
         onEnter: () => {
           setHomeView("all");
+          setShowLevel2Videos(false);
+          setInteractiveSection(true);
         },
         onLeaveBack: () => {
           setHomeView("level-2");
+          setInteractiveSection(false);
         },
         onLeave: () => {
           // setShowControls(true);

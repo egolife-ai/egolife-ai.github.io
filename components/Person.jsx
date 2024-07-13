@@ -2,22 +2,41 @@ import { Billboard, Center, Text } from "@react-three/drei";
 import { editable as e } from "@theatre/r3f";
 import * as THREE from "three";
 import VideoAnnotation from "./VideoAnnotation";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Sight from "./Sight";
 import ModelLabel from "./ModelLabel";
+import { ControlsContext } from "@/app/page";
 
 const Person = ({
   id,
   label,
   videoSrc,
   model: Model,
+  position,
+  rotation,
   showSight = false,
   visible = true,
+  showVideo = false,
 }) => {
   const [hovered, setHovered] = useState(false);
 
+  const { setShowPersonVideos, homeView, interactiveSection } =
+    useContext(ControlsContext);
+
+  useEffect(() => {
+    if (!interactiveSection && homeView === "level-1") {
+      setShowPersonVideos(!hovered);
+    }
+  }, [hovered, homeView, interactiveSection]);
+
   return (
-    <e.group theatreKey={`Persons / PersonGroup-${id}`} visible={visible}>
+    // <e.group
+    <group
+      theatreKey={`Persons / PersonGroup-${id}`}
+      visible={visible}
+      position={position}
+      rotation={rotation}
+    >
       <Center>
         <Model
           onPointerEnter={(e) => {
@@ -37,8 +56,9 @@ const Person = ({
         show={showSight || hovered}
       />
       <ModelLabel>{label}</ModelLabel>
-      <VideoAnnotation src={videoSrc} show={hovered} />
-    </e.group>
+      <VideoAnnotation src={videoSrc} show={showVideo || hovered} />
+      {/* </e.group> */}
+    </group>
   );
 };
 
