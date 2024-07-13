@@ -26,7 +26,7 @@ const Controls = () => {
   } = useContext(ControlsContext);
 
   return (
-    <div className="flex items-center gap-8 rounded-lg border bg-yellow-50/50 p-3 shadow-xl backdrop-blur">
+    <div className="flex items-center gap-7 rounded-lg border bg-yellow-50/50 p-3 shadow-xl backdrop-blur">
       <div className="flex flex-col gap-2">
         {/* Toggle Walls / Roof */}
 
@@ -73,7 +73,7 @@ const Controls = () => {
         defaultValue="all"
         value={homeView}
         onValueChange={setHomeView}
-        className="mt-[9px]"
+        className="mx-2 mt-[9px]"
         id="radio-view"
       >
         <div className="flex items-center space-x-2">
@@ -92,10 +92,26 @@ const Controls = () => {
         </div>
       </RadioGroup>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col items-center gap-2">
         {/* <div>Date</div>
         <Slider className="w-[100px]" /> */}
         <DatePicker value={videoDate} onChange={setVideoDate} />
+        <RadioGroup
+          // defaultValue="all"
+          // value={homeView}
+          // onValueChange={setHomeView}
+          className="mt-[9px]"
+          id="radio-view"
+        >
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="all" id="all" />
+            <Label htmlFor="all">11:30</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="level-1" id="level-1" />
+            <Label htmlFor="level-1">17:30</Label>
+          </div>
+        </RadioGroup>
       </div>
 
       <motion.button
@@ -116,7 +132,9 @@ const Controls = () => {
         ) : (
           <div className="flex items-center gap-2 px-2 text-sm font-bold">
             <Pointer className="size-5" />
-            <div>Allow zoom and panning</div>
+            <div className="leading-tight">
+              Allow zoom <br /> and panning
+            </div>
           </div>
         )}
       </motion.button>
