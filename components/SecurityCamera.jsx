@@ -22,11 +22,11 @@ const SecurityCamera = ({
   const { setShowLevel2Videos, homeView, interactiveSection } =
     useContext(ControlsContext);
 
-  useEffect(() => {
-    if (!interactiveSection && homeView === "level-2") {
-      setShowLevel2Videos(!hovered);
-    }
-  }, [hovered, homeView, interactiveSection]);
+  // useEffect(() => {
+  //   if (!interactiveSection && homeView === "level-2") {
+  //     setShowLevel2Videos(!hovered);
+  //   }
+  // }, [hovered, homeView, interactiveSection]);
 
   return (
     // TODO: Outline

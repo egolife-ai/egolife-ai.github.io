@@ -23,10 +23,12 @@ const Controls = () => {
     setShowDemo,
     videoDate,
     setVideoDate,
+    showAllVideos,
+    setShowAllVideos
   } = useContext(ControlsContext);
 
   return (
-    <div className="flex items-center gap-7 rounded-lg border bg-yellow-50/50 p-3 shadow-xl backdrop-blur">
+    <div className="flex items-center gap-7 rounded-lg border bg-yellow-50/80 p-3 shadow-xl backdrop-blur">
       <div className="flex flex-col gap-2">
         {/* Toggle Walls / Roof */}
 
@@ -43,11 +45,22 @@ const Controls = () => {
         </InputGroup>
         {/* </MotionDiv> */}
 
-        <InputGroup label="Show Demo">
+        {/* <InputGroup label="Show Demo">
           <Toggle
             variant="outline"
             pressed={showDemo}
             onPressedChange={setShowDemo}
+            className="px-2"
+          >
+            <Cctv className="size-4" />
+          </Toggle>
+        </InputGroup> */}
+
+        <InputGroup label="Show All Videos">
+          <Toggle
+            variant="outline"
+            pressed={showAllVideos}
+            onPressedChange={setShowAllVideos}
             className="px-2"
           >
             <Cctv className="size-4" />
@@ -73,7 +86,7 @@ const Controls = () => {
         defaultValue="all"
         value={homeView}
         onValueChange={setHomeView}
-        className="mx-2 mt-[9px]"
+        className="mx-2 mt-[0px]"
         id="radio-view"
       >
         <div className="flex items-center space-x-2">
@@ -100,7 +113,7 @@ const Controls = () => {
           // defaultValue="all"
           // value={homeView}
           // onValueChange={setHomeView}
-          className="mt-[9px]"
+          className=""
           id="radio-view"
         >
           <div className="flex items-center space-x-2">

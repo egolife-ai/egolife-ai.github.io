@@ -20,14 +20,14 @@ const Person = ({
 }) => {
   const [hovered, setHovered] = useState(false);
 
-  const { setShowPersonVideos, homeView, interactiveSection } =
+  const { setShowPersonVideos, homeView, interactiveSection, showDemo } =
     useContext(ControlsContext);
 
-  useEffect(() => {
-    if (!interactiveSection && homeView === "level-1") {
-      setShowPersonVideos(!hovered);
-    }
-  }, [hovered, homeView, interactiveSection]);
+  // useEffect(() => {
+  //   if (!interactiveSection && homeView === "level-1") {
+  //     setShowPersonVideos(!hovered);
+  //   }
+  // }, [hovered, homeView, interactiveSection]);
 
   return (
     // <e.group

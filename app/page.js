@@ -10,6 +10,7 @@ import { createContext, useEffect, useState } from "react";
 import Controls from "@/components/Controls";
 import IntroText from "@/components/IntroText";
 import { cn } from "@/lib/utils";
+import VideosGrid from "@/components/VideosGrid";
 
 // TODO: Aesthetic like Sims city
 // TODO: Controls can look like a video game
@@ -24,19 +25,19 @@ export default function Home() {
   const [showSights, setShowSights] = useState(false);
   const [showWalls, setShowWalls] = useState(true);
   const [autoRotate, setAutoRotate] = useState(true);
-  const [showDemo, setShowDemo] = useState(false);
+  // const [showDemo, setShowDemo] = useState(false);
   const [showPersonVideos, setShowPersonVideos] = useState(false);
   const [showLevel2Videos, setShowLevel2Videos] = useState(false);
   const [showToggleWalls, setShowToggleWalls] = useState(false);
   const [showToggleSights, setShowToggleSights] = useState(false);
   const [interactiveSection, setInteractiveSection] = useState(false);
   const [videoDate, setVideoDate] = useState();
-
+  const [showAllVideos, setShowAllVideos] = useState(false);
 
   // const [wallOpacity, setWallOpacity] = useState(1);
   // const [roofOpacity, setRoofOpacity] = useState(1);
 
-  console.log(showLevel2Videos)
+  console.log(showLevel2Videos);
 
   useEffect(() => {
     if (allowControl) {
@@ -63,8 +64,8 @@ export default function Home() {
         showToggleWalls,
         setShowToggleSights,
         showToggleSights,
-        setShowDemo,
-        showDemo,
+        // setShowDemo,
+        // showDemo,
         showPersonVideos,
         setShowPersonVideos,
         showLevel2Videos,
@@ -72,7 +73,9 @@ export default function Home() {
         setInteractiveSection,
         interactiveSection,
         videoDate,
-        setVideoDate
+        setVideoDate,
+        showAllVideos,
+        setShowAllVideos,
       }}
     >
       {/* <SceneContext.Provider
@@ -128,6 +131,7 @@ export default function Home() {
               exit={{ opacity: 0, filter: "blur(4px)" }}
             >
               <Controls />
+              {showAllVideos && <VideosGrid />}
             </motion.div>
           )}
         </AnimatePresence>

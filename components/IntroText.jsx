@@ -42,34 +42,34 @@ const IntroText = () => {
       {
         onEnter: () => {
           setHomeView("level-1");
-          setShowPersonVideos(true);
+          // setShowPersonVideos(true);
         },
         onLeaveBack: () => {
           setHomeView("all");
-          setShowPersonVideos(false);
+          // setShowPersonVideos(false);
         },
       },
       {
         onEnter: () => {
           setHomeView("level-2");
-          setShowPersonVideos(false);
-          setShowLevel2Videos(true);
+          // setShowPersonVideos(false);
+          // setShowLevel2Videos(true);
         },
         onLeaveBack: () => {
           setHomeView("level-1");
-          setShowPersonVideos(true);
-          setShowLevel2Videos(false);
+          // setShowPersonVideos(true);
+          // setShowLevel2Videos(false);
         },
       },
       {
         onEnter: () => {
           setHomeView("all");
-          setShowLevel2Videos(false);
-          setInteractiveSection(true);
+          // setShowLevel2Videos(false);
+          // setInteractiveSection(true);
         },
         onLeaveBack: () => {
           setHomeView("level-2");
-          setInteractiveSection(false);
+          // setInteractiveSection(false);
         },
         onLeave: () => {
           // setShowControls(true);
