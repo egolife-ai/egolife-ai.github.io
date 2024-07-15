@@ -37,8 +37,6 @@ export default function Home() {
   // const [wallOpacity, setWallOpacity] = useState(1);
   // const [roofOpacity, setRoofOpacity] = useState(1);
 
-  console.log(showLevel2Videos);
-
   useEffect(() => {
     if (allowControl) {
       setAutoRotate(false);
@@ -131,7 +129,17 @@ export default function Home() {
               exit={{ opacity: 0, filter: "blur(4px)" }}
             >
               <Controls />
-              {showAllVideos && <VideosGrid />}
+              <AnimatePresence>
+                {showAllVideos && (
+                  <motion.div
+                    initial={{ opacity: 0, filter: "blur(4px)" }}
+                    animate={{ opacity: 1, filter: "blur(0)" }}
+                    exit={{ opacity: 0, filter: "blur(4px)" }}
+                  >
+                    <VideosGrid />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           )}
         </AnimatePresence>
