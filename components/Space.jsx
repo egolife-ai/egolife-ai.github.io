@@ -138,13 +138,15 @@ const Space = () => {
       {/* <primitive object={model.scene} position={[-20, 0, 0]} /> */}
 
       {/* House models */}
-      <Garden />
-      <Level1 visible={true} />
-      <Level1Other visible={true} />
-      <Level2Other opacity={level2Opacity} />
-      <Level2 opacity={level2Opacity} />
-      <Roof opacity={roofOpacity} />
-      <Wall opacity={wallOpacity} />
+      <group theatreKey="House">
+        <Garden />
+        <Level1 visible={true} />
+        <Level1Other visible={true} />
+        <Level2Other opacity={level2Opacity} />
+        <Level2 opacity={level2Opacity} />
+        <Roof opacity={roofOpacity} />
+        <Wall opacity={wallOpacity} />
+      </group>
 
       {/* Level 1 Cameras */}
       {[...Array(8).keys()].map((i) => (
@@ -164,7 +166,7 @@ const Space = () => {
           key={`level-2-camera-${i + 1}`}
           groupId={"Level-2"}
           id={i + 1}
-          label={i + 1}
+          label={i + 1 + 8}
           videoSrc={"/videos/sample-video.mp4"}
           visible={homeView !== "level-1"}
           showSight={showSights}
