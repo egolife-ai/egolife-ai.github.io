@@ -52,7 +52,7 @@ const VideoAnnotation = ({ src, show }) => {
           <AnimatePresence>
             {show && (
               <motion.div
-                className="h-[200px] w-[300px] origin-top-left overflow-hidden rounded-lg border-2 shadow-xl"
+                className="h-[150px] w-[250px] origin-top-left overflow-hidden rounded-lg border-2 shadow-xl"
                 initial={{
                   opacity: 0,
                   scale: 0,

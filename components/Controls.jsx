@@ -8,6 +8,13 @@ import { Slider } from "@/components/ui/slider";
 import { motion, MotionConfig } from "framer-motion";
 import { cn } from "@/lib/utils";
 import DatePicker from "./DatePicker";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const Controls = () => {
   const {
@@ -24,16 +31,16 @@ const Controls = () => {
     videoDate,
     setVideoDate,
     showAllVideos,
-    setShowAllVideos
+    setShowAllVideos,
   } = useContext(ControlsContext);
 
   return (
     <div className="flex items-center gap-7 rounded-lg border bg-yellow-50/80 p-3 shadow-xl backdrop-blur">
-      <div className="flex flex-col gap-2">
+      {/* <div className="flex flex-col gap-2"> */}
         {/* Toggle Walls / Roof */}
 
         {/* <MotionDiv show={showToggleWalls}> */}
-        <InputGroup label="Show Walls / Roof">
+        {/* <InputGroup label="Show Walls / Roof">
           <Toggle
             variant="outline"
             pressed={showWalls}
@@ -42,7 +49,7 @@ const Controls = () => {
           >
             <BrickWall className="size-4" />
           </Toggle>
-        </InputGroup>
+        </InputGroup> */}
         {/* </MotionDiv> */}
 
         {/* <InputGroup label="Show Demo">
@@ -55,17 +62,6 @@ const Controls = () => {
             <Cctv className="size-4" />
           </Toggle>
         </InputGroup> */}
-
-        <InputGroup label="Show All Videos">
-          <Toggle
-            variant="outline"
-            pressed={showAllVideos}
-            onPressedChange={setShowAllVideos}
-            className="px-2"
-          >
-            <Cctv className="size-4" />
-          </Toggle>
-        </InputGroup>
 
         {/* Toggle Sights */}
         {/* <MotionDiv show={showToggleSights}> */}
@@ -80,36 +76,67 @@ const Controls = () => {
           </Toggle>
         </InputGroup> */}
         {/* </MotionDiv> */}
+      {/* </div> */}
+
+      <div className="flex flex-col gap-4 items-center">
+        <InputGroup label="Show Walls / Roof">
+          <Toggle
+            variant="outline"
+            pressed={showWalls}
+            onPressedChange={setShowWalls}
+            className="px-2"
+          >
+            <BrickWall className="size-4" />
+          </Toggle>
+        </InputGroup>
+        <RadioGroup
+          defaultValue="all"
+          value={homeView}
+          onValueChange={setHomeView}
+          className="mx-2 mt-[0px]"
+          id="radio-view"
+        >
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="all" id="all" />
+            <Label htmlFor="all">
+              <Home className="size-5" />
+            </Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="level-1" id="level-1" />
+            <Label htmlFor="level-1">Level 1</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="level-2" id="level-2" />
+            <Label htmlFor="level-2">Level 2</Label>
+          </div>
+        </RadioGroup>
       </div>
 
-      <RadioGroup
-        defaultValue="all"
-        value={homeView}
-        onValueChange={setHomeView}
-        className="mx-2 mt-[0px]"
-        id="radio-view"
-      >
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="all" id="all" />
-          <Label htmlFor="all">
-            <Home className="size-5" />
-          </Label>
-        </div>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="level-1" id="level-1" />
-          <Label htmlFor="level-1">Level 1</Label>
-        </div>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="level-2" id="level-2" />
-          <Label htmlFor="level-2">Level 2</Label>
-        </div>
-      </RadioGroup>
+      <div className="flex flex-col gap-2 justify-between">
+        <Select defaultValue="April 16, 11:30" className="mb-auto">
+          <SelectTrigger className="w-[150px]">
+            <SelectValue placeholder="Select Date" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="April 16, 11:30">April 16, 11:30</SelectItem>
+            <SelectItem value="April 16, 17:40">April 16, 17:40</SelectItem>
+          </SelectContent>
+        </Select>
 
-      <div className="flex flex-col items-center gap-2">
-        {/* <div>Date</div>
-        <Slider className="w-[100px]" /> */}
-        <DatePicker value={videoDate} onChange={setVideoDate} />
-        <RadioGroup
+        <InputGroup label="Show Videos">
+          <Toggle
+            variant="outline"
+            pressed={showAllVideos}
+            onPressedChange={setShowAllVideos}
+            className="px-2"
+          >
+            <Cctv className="size-4" />
+          </Toggle>
+        </InputGroup>
+
+        {/* <DatePicker value={videoDate} onChange={setVideoDate} /> */}
+        {/* <RadioGroup
           // defaultValue="all"
           // value={homeView}
           // onValueChange={setHomeView}
@@ -124,7 +151,7 @@ const Controls = () => {
             <RadioGroupItem value="level-1" id="level-1" />
             <Label htmlFor="level-1">17:30</Label>
           </div>
-        </RadioGroup>
+        </RadioGroup> */}
       </div>
 
       <motion.button

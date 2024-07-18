@@ -155,7 +155,7 @@ const Space = () => {
           groupId={"Level-1"}
           id={i + 1}
           label={i + 1}
-          videoSrc={"/videos/sample-video.mp4"}
+          videoSrc={"/videos/camera_1.mov"}
           showSight={showSights}
         />
       ))}
@@ -167,7 +167,7 @@ const Space = () => {
           groupId={"Level-2"}
           id={i + 1}
           label={i + 1 + 8}
-          videoSrc={"/videos/sample-video.mp4"}
+          videoSrc={"/videos/camera_1.mov"}
           visible={homeView !== "level-1"}
           showSight={showSights}
           showVideo={showLevel2Videos}
@@ -182,7 +182,7 @@ const Space = () => {
           id={i + 1}
           // label={i + 1}
           label={names[i].en}
-          videoSrc={"/videos/sample-video.mp4"}
+          videoSrc={"/videos/person_1.mov"}
           model={i < 2 ? Duck : i < 4 ? Dog : Bear}
           showSight={showSights}
           showVideo={showPersonVideos}

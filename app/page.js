@@ -1,5 +1,8 @@
 "use client";
 
+import "@vidstack/react/player/styles/default/theme.css";
+import "@vidstack/react/player/styles/default/layouts/video.css";
+
 import Scene from "@/components/Scene";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
@@ -33,6 +36,7 @@ export default function Home() {
   const [interactiveSection, setInteractiveSection] = useState(false);
   const [videoDate, setVideoDate] = useState();
   const [showAllVideos, setShowAllVideos] = useState(false);
+  const [videoTab, setVideoTab] = useState("egocentric");
 
   // const [wallOpacity, setWallOpacity] = useState(1);
   // const [roofOpacity, setRoofOpacity] = useState(1);
@@ -74,6 +78,8 @@ export default function Home() {
         setVideoDate,
         showAllVideos,
         setShowAllVideos,
+        videoTab,
+        setVideoTab,
       }}
     >
       {/* <SceneContext.Provider

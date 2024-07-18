@@ -2,10 +2,12 @@ import { Billboard, Center, Text } from "@react-three/drei";
 import { editable as e } from "@theatre/r3f";
 import * as THREE from "three";
 import VideoAnnotation from "./VideoAnnotation";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Sight from "./Sight";
 import ModelLabel from "./ModelLabel";
 import { ControlsContext } from "@/app/page";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Person = ({
   id,
@@ -20,6 +22,8 @@ const Person = ({
 }) => {
   const [hovered, setHovered] = useState(false);
 
+  const ref = useRef();
+
   const { setShowPersonVideos, homeView, interactiveSection, showDemo } =
     useContext(ControlsContext);
 
@@ -29,9 +33,26 @@ const Person = ({
   //   }
   // }, [hovered, homeView, interactiveSection]);
 
+  useGSAP(() => {
+    if (label === "Jake") {
+      const tl = gsap
+        .timeline({
+          repeat: -1,
+          repeatDelay: 1,
+        })
+        .to(ref.current.position, {
+          z: "+=1",
+          repeat: 1,
+          yoyo: true,
+          ease: "none",
+        });
+    }
+  }, []);
+
   return (
     // <e.group
     <group
+      ref={ref}
       theatreKey={`Persons / PersonGroup-${id}`}
       visible={visible}
       position={position}

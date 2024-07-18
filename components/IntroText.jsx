@@ -23,6 +23,8 @@ const IntroText = () => {
     setShowPersonVideos,
     setShowLevel2Videos,
     setInteractiveSection,
+    setShowAllVideos,
+    setVideoTab,
   } = useContext(ControlsContext);
 
   const tlProps = useMemo(() => {
@@ -42,21 +44,26 @@ const IntroText = () => {
       {
         onEnter: () => {
           setHomeView("level-1");
+          setShowAllVideos(true);
+          setVideoTab("egocentric");
           // setShowPersonVideos(true);
         },
         onLeaveBack: () => {
           setHomeView("all");
+          setShowAllVideos(false);
           // setShowPersonVideos(false);
         },
       },
       {
         onEnter: () => {
           setHomeView("level-2");
+          setVideoTab("level-2");
           // setShowPersonVideos(false);
           // setShowLevel2Videos(true);
         },
         onLeaveBack: () => {
           setHomeView("level-1");
+          setVideoTab("egocentric");
           // setShowPersonVideos(true);
           // setShowLevel2Videos(false);
         },
@@ -64,11 +71,13 @@ const IntroText = () => {
       {
         onEnter: () => {
           setHomeView("all");
+          setShowAllVideos(false);
           // setShowLevel2Videos(false);
           // setInteractiveSection(true);
         },
         onLeaveBack: () => {
           setHomeView("level-2");
+          setShowAllVideos(true);
           // setInteractiveSection(false);
         },
         onLeave: () => {
@@ -116,8 +125,9 @@ const IntroText = () => {
         <div className="mt-[75px] rounded bg-yellow-50/80 px-5 py-5 text-center text-2xl font-medium">
           <p className="mb-5 font-bold">Welcome to the EgoLife Project!</p>
           <p>
-            An unprecedented 60h per video, interpersonal, multi-modal,
-            multi-view, daily-life egocentric video dataset and benchmark.
+            An unprecedented 60h per video, <strong>interpersonal</strong>,{" "}
+            <strong>multi-modal</strong>, <strong>multi-view</strong>,{" "}
+            <strong>daily-life egocentric</strong> video dataset and benchmark.
           </p>
           <div className="mt-5 flex animate-bounce flex-col items-center justify-center gap-2 text-stone-500">
             <Mouse className="" />
@@ -130,7 +140,8 @@ const IntroText = () => {
         className="pointer-events-none relative z-10 mb-[50vh] mt-[100vh]"
       >
         <Text>
-          <TextHeader>Earth Day Event (April 15 – 22)</TextHeader>
+          {/* <TextHeader>Earth Day Event (April 15 – 22)</TextHeader> */}
+          <TextHeader>Extremely Long, Daily Life</TextHeader>
           <p>
             The project invites 6 volunteers live together in the EgoHouse for 7
             days, from April 15 – 22, with a concrete mission of planning and
@@ -139,7 +150,8 @@ const IntroText = () => {
           </p>
         </Text>
         <Text>
-          <TextHeader>6 Extremely Long Ego Videos</TextHeader>
+          {/* <TextHeader>6 Extremely Long Ego Videos</TextHeader> */}
+          <TextHeader>Egocentric, Interpersonal</TextHeader>
           <p>
             6 volunteers each capture 60 hours of coherent egocentric video,
             showcasing extensively correlated daily-life content across
@@ -150,7 +162,8 @@ const IntroText = () => {
           </InteractionPrompt>
         </Text>
         <Text>
-          <TextHeader>15 Exo Cameras with Sync</TextHeader>
+          {/* <TextHeader>15 Exo Cameras with Sync</TextHeader> */}
+          <TextHeader>Multi-View with Synchronization</TextHeader>
           <p>
             Egocentric videos are synchronized with footage from 15 GoPro
             cameras strategically placed throughout the house, providing
