@@ -15,8 +15,6 @@ const variants = {
 const LoadingScreen = () => {
   const { progress, active } = useProgress();
 
-  console.log(progress)
-
   return (
     <motion.div
       variants={variants}
