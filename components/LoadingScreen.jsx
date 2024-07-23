@@ -15,11 +15,13 @@ const variants = {
 const LoadingScreen = () => {
   const { progress, active } = useProgress();
 
+  console.log(progress)
+
   return (
     <motion.div
       variants={variants}
       initial="visible"
-      animate={active ? "hidden" : "visible"}
+      animate={progress === 100 ? "hidden" : "visible"}
       transition={{
         duration: 1,
       }}

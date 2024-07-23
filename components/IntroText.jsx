@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
 import { ControlsContext, SceneContext } from "@/app/page";
 import { Mouse, Pointer } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -123,11 +124,15 @@ const IntroText = () => {
       </div> */}
       <div className="z-10 w-full max-w-xl">
         <div className="mt-[75px] rounded bg-yellow-50/80 px-5 py-5 text-center text-2xl font-medium">
-          <p className="mb-5 font-bold">Welcome to the EgoLife Project!</p>
-          <p>
-            An unprecedented 60h per video, <strong>interpersonal</strong>,{" "}
-            <strong>multi-modal</strong>, <strong>multi-view</strong>,{" "}
-            <strong>daily-life egocentric</strong> video dataset and benchmark.
+          <p className="mb-5">Welcome to the EgoLife Project!</p>
+          <p className="font-bold">
+            Towards <span className="text-title-purple">Extremely Long</span>,{" "}
+            <span className="text-title-yellow">Egocentric</span>,{" "}
+            <span className="text-title-green">Interpersonal</span>,{" "}
+            <span className="text-title-pink">Multi-view</span>,{" "}
+            <span className="text-title-blue">Multi-modal</span>,{" "}
+            <span className="text-title-brown">Daily Life</span>{" "}
+            <span>AI Assistant</span>
           </p>
           <div className="mt-5 flex animate-bounce flex-col items-center justify-center gap-2 text-stone-500">
             <Mouse className="" />
@@ -140,47 +145,62 @@ const IntroText = () => {
         className="pointer-events-none relative z-10 mb-[50vh] mt-[100vh]"
       >
         <Text>
-          {/* <TextHeader>Earth Day Event (April 15 – 22)</TextHeader> */}
-          <TextHeader>Extremely Long, Daily Life</TextHeader>
+          <TextHeader>
+            <span className="text-title-purple">Extremely Long</span>,{" "}
+            <span className="text-title-brown">Daily Life</span>
+          </TextHeader>
           <p>
-            The project invites 6 volunteers live together in the EgoHouse for 7
-            days, from April 15 – 22, with a concrete mission of planning and
-            hosting an Earth Day party. This goal drives them to organize,
-            discuss, decorate, prepare, and survive the week.
+            EgoLife captures a week-long shared living experience of six
+            volunteers planning an Earth Day party. With 60 hours of footage per
+            participant, this dataset enables analysis of long-term event
+            connections spanning hours and days, advancing AI research in
+            long-context understanding.
           </p>
         </Text>
         <Text>
-          {/* <TextHeader>6 Extremely Long Ego Videos</TextHeader> */}
-          <TextHeader>Egocentric, Interpersonal</TextHeader>
+          <TextHeader>
+            <span className="text-title-yellow">Egocentric</span> &{" "}
+            <span className="text-title-green">Interpersonal</span>
+          </TextHeader>
           <p>
-            6 volunteers each capture 60 hours of coherent egocentric video,
-            showcasing extensively correlated daily-life content across
-            interpersonal interactions and extended timelines.
+            The project documents six volunteers engaging in daily chores,
+            collaborative activities, conversations, and social interactions.
+            Their synchronized egocentric videos offer unique insights into
+            individual perspectives and group dynamics within a shared living
+            environment.
           </p>
           <InteractionPrompt>
             Hover on each character to see demo samples
           </InteractionPrompt>
         </Text>
         <Text>
-          {/* <TextHeader>15 Exo Cameras with Sync</TextHeader> */}
-          <TextHeader>Multi-View with Synchronization</TextHeader>
+          <TextHeader>
+            <span className="text-title-blue">Multi-modal</span> &{" "}
+            <span className="text-title-pink">Multi-view</span>
+          </TextHeader>
           <p>
-            Egocentric videos are synchronized with footage from 15 GoPro
-            cameras strategically placed throughout the house, providing
-            multi-view references.
+            Participants wear first-person view glasses recording video, gaze,
+            and IMU data, synchronized with 15 strategically placed GoPro
+            cameras. This multi-view, multi-modal system provides holistic
+            environmental context. Additionally, companying with multi-view
+            cameras, 3D scans of the house and participants support potential 3D
+            applications within the EgoLife project.
           </p>
           <InteractionPrompt>
             Hover on each camera to see demo samples
           </InteractionPrompt>
         </Text>
         <Text>
-          <TextHeader>The EgoLife Dataset</TextHeader>
+          <TextHeader>
+            <span>Extensive Annotation</span>
+          </TextHeader>
           <p>
-            The EgoLife dataset features extremely long-term temporal
-            correlations and interpersonal interactions, with extensive
-            annotations including transcriptions, Q&A pairs, and dense captions.
-            We also provide an QA set to benchmark the extremely long ego video
-            tasks. The dataset also support the training of our EgoLLaVA model.
+            The dataset includes extensive annotations: transcriptions, QA
+            pairs, and dense captions. We provide a QA set for benchmarking
+            long-term egocentric video tasks, focusing on questions requiring
+            information spanning hours and days. These rich annotations support
+            various analyses and are crucial for training our state-of- the-art
+            EgoLLaVA and EgoGPT models.
           </p>
           {/* <InteractionPrompt>
             Now please scroll down and click to explore the EgoHouse to play
@@ -188,7 +208,7 @@ const IntroText = () => {
           </InteractionPrompt> */}
         </Text>
         <Text>
-          <TextHeader>
+          <TextHeader className="text-xl">
             Now please scroll down and click to explore the EgoHouse to play
             with the EgoLife Project!
           </TextHeader>
@@ -215,8 +235,12 @@ function Text({ children }) {
   );
 }
 
-function TextHeader({ children }) {
-  return <h3 className="mb-2 text-center font-bold">{children}</h3>;
+function TextHeader({ className, children }) {
+  return (
+    <h3 className={cn("mb-2 text-center text-3xl font-bold", className)}>
+      {children}
+    </h3>
+  );
 }
 
 function InteractionPrompt({ children }) {
