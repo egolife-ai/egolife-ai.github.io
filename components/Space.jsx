@@ -23,6 +23,12 @@ import { useFrame } from "@react-three/fiber";
 import { DEG2RAD } from "three/src/math/MathUtils";
 import names from "@/data/volunteerNames";
 import personPositions from "@/data/personPositions";
+import { Jake } from "./Jake";
+import { Alice } from "./Alice";
+import { Tasha } from "./Tasha";
+import { Lucia } from "./Lucia";
+import { Katrina } from "./Katrina";
+import { Shure } from "./Shure";
 
 const Space = () => {
   const controls = useRef();
@@ -36,6 +42,7 @@ const Space = () => {
     showPersonVideos,
     showLevel2Videos,
     showDemo,
+    videoDate,
   } = useContext(ControlsContext);
 
   const selectedPersonPositions = showDemo
@@ -96,6 +103,7 @@ const Space = () => {
 
       <CameraControls
         ref={controls}
+        maxDistance={20}
         mouseButtons={
           allowControl
             ? {
@@ -155,7 +163,7 @@ const Space = () => {
           groupId={"Level-1"}
           id={i + 1}
           label={i + 1}
-          videoSrc={"/videos/camera_1.mov"}
+          videoSrc={`videos/${videoDate}/bottom_grid_${i + 1}.mp4`}
           showSight={showSights}
         />
       ))}
@@ -167,7 +175,7 @@ const Space = () => {
           groupId={"Level-2"}
           id={i + 1}
           label={i + 1 + 8}
-          videoSrc={"/videos/camera_1.mov"}
+          videoSrc={`videos/${videoDate}/top_grid_${i + 1}.mp4`}
           visible={homeView !== "level-1"}
           showSight={showSights}
           showVideo={showLevel2Videos}
@@ -182,8 +190,9 @@ const Space = () => {
           id={i + 1}
           // label={i + 1}
           label={names[i].en}
-          videoSrc={"/videos/person_1.mov"}
-          model={i < 2 ? Duck : i < 4 ? Dog : Bear}
+          videoSrc={`videos/${videoDate}/middle_grid_${i + 1}.mp4`}
+          // model={i < 2 ? Duck : i < 4 ? Dog : Bear}
+          model={characterModels[i]}
           showSight={showSights}
           showVideo={showPersonVideos}
           position={selectedPersonPositions[i].position}
@@ -193,5 +202,7 @@ const Space = () => {
     </>
   );
 };
+
+const characterModels = [Jake, Alice, Tasha, Lucia, Katrina, Shure];
 
 export default Space;

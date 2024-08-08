@@ -11,6 +11,15 @@ export default function Duck({ onPointerEnter, onPointerLeave, ...props }) {
   const { nodes, materials } = useGLTF(
     "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/duck/model.gltf",
   );
+
+  // const giraffe = useGLTF("/models/giraffe.glb");
+
+  // return (
+  //   <group ref={group}>
+  //     <primitive object={giraffe.scene} />
+  //   </group>
+  // )
+
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh

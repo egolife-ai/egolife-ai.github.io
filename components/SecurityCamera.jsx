@@ -7,6 +7,7 @@ import { useContext, useEffect, useState } from "react";
 import Sight from "./Sight";
 import ModelLabel from "./ModelLabel";
 import { ControlsContext } from "@/app/page";
+import FakeGlowMaterial from "./FakeGlowMaterial";
 
 const SecurityCamera = ({
   groupId,
@@ -16,6 +17,7 @@ const SecurityCamera = ({
   showSight = false,
   visible = true,
   showVideo = false,
+  showGlow = true,
 }) => {
   const [hovered, setHovered] = useState(false);
 
@@ -29,11 +31,14 @@ const SecurityCamera = ({
   // }, [hovered, homeView, interactiveSection]);
 
   return (
-    // TODO: Outline
     <e.group
       theatreKey={`${groupId} / SecurityCameraGroup-${id}`}
       visible={visible}
     >
+      {/* <mesh visible={showGlow}>
+        <sphereGeometry args={[0.5, 32, 32]} />
+        <FakeGlowMaterial glowColor="white" opacity={0.5} />
+      </mesh> */}
       <SecurityCameraModel
         onPointerEnter={(e) => {
           e.stopPropagation();

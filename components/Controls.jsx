@@ -37,10 +37,10 @@ const Controls = () => {
   return (
     <div className="flex items-center gap-7 rounded-lg border bg-yellow-50/80 p-3 shadow-xl backdrop-blur">
       {/* <div className="flex flex-col gap-2"> */}
-        {/* Toggle Walls / Roof */}
+      {/* Toggle Walls / Roof */}
 
-        {/* <MotionDiv show={showToggleWalls}> */}
-        {/* <InputGroup label="Show Walls / Roof">
+      {/* <MotionDiv show={showToggleWalls}> */}
+      {/* <InputGroup label="Show Walls / Roof">
           <Toggle
             variant="outline"
             pressed={showWalls}
@@ -50,9 +50,9 @@ const Controls = () => {
             <BrickWall className="size-4" />
           </Toggle>
         </InputGroup> */}
-        {/* </MotionDiv> */}
+      {/* </MotionDiv> */}
 
-        {/* <InputGroup label="Show Demo">
+      {/* <InputGroup label="Show Demo">
           <Toggle
             variant="outline"
             pressed={showDemo}
@@ -63,9 +63,9 @@ const Controls = () => {
           </Toggle>
         </InputGroup> */}
 
-        {/* Toggle Sights */}
-        {/* <MotionDiv show={showToggleSights}> */}
-        {/* <InputGroup label="Show All Videos">
+      {/* Toggle Sights */}
+      {/* <MotionDiv show={showToggleSights}> */}
+      {/* <InputGroup label="Show All Videos">
           <Toggle
             variant="outline"
             pressed={showSights}
@@ -75,10 +75,10 @@ const Controls = () => {
             <Cctv className="size-4" />
           </Toggle>
         </InputGroup> */}
-        {/* </MotionDiv> */}
+      {/* </MotionDiv> */}
       {/* </div> */}
 
-      <div className="flex flex-col gap-4 items-center">
+      <div className="flex flex-col items-center gap-4">
         <InputGroup label="Show Walls / Roof">
           <Toggle
             variant="outline"
@@ -113,14 +113,19 @@ const Controls = () => {
         </RadioGroup>
       </div>
 
-      <div className="flex flex-col gap-2 justify-between">
-        <Select defaultValue="April 16, 11:30" className="mb-auto">
+      <div className="flex flex-col justify-between gap-2">
+        {/* <Select defaultValue="demo1_blur" className="mb-auto"> */}
+        <Select
+          value={videoDate}
+          onValueChange={setVideoDate}
+          className="mb-auto"
+        >
           <SelectTrigger className="w-[150px]">
             <SelectValue placeholder="Select Date" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="April 16, 11:30">April 16, 11:30</SelectItem>
-            <SelectItem value="April 16, 17:40">April 16, 17:40</SelectItem>
+            <SelectItem value="demo1_blur">April 16, 11:30</SelectItem>
+            <SelectItem value="demo2_blur">April 16, 17:40</SelectItem>
           </SelectContent>
         </Select>
 

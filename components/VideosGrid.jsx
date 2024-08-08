@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { ControlsContext } from "@/app/page";
 
 const VideosGrid = () => {
-  const { videoTab, setVideoTab } = useContext(ControlsContext);
+  const { videoTab, setVideoTab, videoDate } = useContext(ControlsContext);
 
   return (
     <div>
@@ -14,14 +14,17 @@ const VideosGrid = () => {
           <TabsTrigger value="level-1">Level 1</TabsTrigger>
           <TabsTrigger value="level-2">Level 2</TabsTrigger>
         </TabsList>
-        <TabsContent value="egocentric">
-          <Videos />
+        <TabsContent value="egocentric" className="w-[600px]">
+          {/* <Videos /> */}
+          <Video src={`videos/${videoDate}/middle_section.mp4`} />
         </TabsContent>
-        <TabsContent value="level-1">
-          <Videos />
+        <TabsContent value="level-1" className="w-[600px]">
+          {/* <Videos /> */}
+          <Video src={`videos/${videoDate}/bottom_section.mp4`} />
         </TabsContent>
-        <TabsContent value="level-2">
-          <Videos />
+        <TabsContent value="level-2" className="w-[600px]">
+          {/* <Videos /> */}
+          <Video src={`videos/${videoDate}/top_section.mp4`} />
         </TabsContent>
       </Tabs>
     </div>
@@ -41,5 +44,7 @@ function Videos() {
     </div>
   );
 }
+
+const videoPaths = [];
 
 export default VideosGrid;

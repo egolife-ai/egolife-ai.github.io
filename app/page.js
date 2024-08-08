@@ -34,7 +34,7 @@ export default function Home() {
   const [showToggleWalls, setShowToggleWalls] = useState(false);
   const [showToggleSights, setShowToggleSights] = useState(false);
   const [interactiveSection, setInteractiveSection] = useState(false);
-  const [videoDate, setVideoDate] = useState();
+  const [videoDate, setVideoDate] = useState("demo1_blur");
   const [showAllVideos, setShowAllVideos] = useState(false);
   const [videoTab, setVideoTab] = useState("egocentric");
 
