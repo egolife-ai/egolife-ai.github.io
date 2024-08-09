@@ -124,8 +124,8 @@ const Controls = () => {
             <SelectValue placeholder="Select Date" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="demo1_blur">April 16, 11:30</SelectItem>
-            <SelectItem value="demo2_blur">April 16, 17:40</SelectItem>
+            <SelectItem value="demo1_blur">Day 1, 11:22</SelectItem>
+            <SelectItem value="demo2_blur">Day 1, 13:20</SelectItem>
           </SelectContent>
         </Select>
 
