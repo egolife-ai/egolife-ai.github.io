@@ -33,25 +33,25 @@ const Person = ({
   //   }
   // }, [hovered, homeView, interactiveSection]);
 
-  useGSAP(() => {
-    if (label === "Jake") {
-      const tl = gsap
-        .timeline({
-          repeat: -1,
-          repeatDelay: 1,
-        })
-        .to(ref.current.position, {
-          z: "+=1",
-          repeat: 1,
-          yoyo: true,
-          ease: "none",
-        });
-    }
-  }, []);
+  // useGSAP(() => {
+  //   if (label === "Jake") {
+  //     const tl = gsap
+  //       .timeline({
+  //         repeat: -1,
+  //         repeatDelay: 1,
+  //       })
+  //       .to(ref.current.position, {
+  //         z: "+=1",
+  //         repeat: 1,
+  //         yoyo: true,
+  //         ease: "none",
+  //       });
+  //   }
+  // }, []);
 
   return (
-    // <e.group
-    <group
+    <e.group
+      // <group
       ref={ref}
       theatreKey={`Persons / PersonGroup-${id}`}
       visible={visible}
@@ -76,10 +76,9 @@ const Person = ({
         rotation={[-1.46, 0, 0]}
         show={showSight || hovered}
       />
-      <ModelLabel>{label}</ModelLabel>
+      <ModelLabel position={[0, 0.6, 0]}>{label}</ModelLabel>
       <VideoAnnotation src={videoSrc} show={showVideo || hovered} />
-      {/* </e.group> */}
-    </group>
+    </e.group>
   );
 };
 

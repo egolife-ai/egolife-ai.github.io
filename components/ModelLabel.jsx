@@ -8,8 +8,11 @@ const ModelLabel = ({ children, ...props }) => {
         anchorY="bottom"
         fontSize={0.2}
         position={[0, 0.4, 0]}
+        // position={[0, 0.6, 0]}
         outlineColor="white"
         outlineWidth={0.02}
+        // depthOffset={-10}
+        // renderOrder={-5}
         {...props}
       >
         {children}

@@ -55,7 +55,7 @@ const SecurityCamera = ({
         rotation={[0.48, -1.1, 1.6]}
         show={showSight || hovered}
       />
-      <ModelLabel position={[0, 0.1, 0]}>{label}</ModelLabel>
+      <ModelLabel position={[0.0, 0.1, 0.0]}>{label}</ModelLabel>
       <VideoAnnotation src={videoSrc} show={showVideo || hovered} />
     </e.group>
   );
