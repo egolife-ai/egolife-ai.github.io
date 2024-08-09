@@ -163,7 +163,7 @@ const Space = () => {
           groupId={"Level-1"}
           id={i + 1}
           label={i + 1}
-          videoSrc={`videos/${videoDate}/bottom_grid_${i + 1}.mp4`}
+          videoSrc={`videos/${videoDate}/bottom_grid_${i + 1 >= 5 ? i + 2 : i + 1}.mp4`}
           showSight={showSights}
         />
       ))}
@@ -175,7 +175,7 @@ const Space = () => {
           groupId={"Level-2"}
           id={i + 1}
           label={i + 1 + 8}
-          videoSrc={`videos/${videoDate}/top_grid_${i + 1}.mp4`}
+          videoSrc={`videos/${videoDate}/top_grid_${i + 1 >= 5 ? i + 2 : i + 1}.mp4`}
           visible={homeView !== "level-1"}
           showSight={showSights}
           showVideo={showLevel2Videos}

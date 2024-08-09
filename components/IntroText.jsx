@@ -22,10 +22,10 @@ const IntroText = () => {
     setShowControls,
     setShowToggleWalls,
     setShowPersonVideos,
-    setShowLevel2Videos,
     setInteractiveSection,
     setShowAllVideos,
     setVideoTab,
+    setShowLevel2Videos,
   } = useContext(ControlsContext);
 
   const tlProps = useMemo(() => {
@@ -58,28 +58,29 @@ const IntroText = () => {
       {
         onEnter: () => {
           setHomeView("level-2");
-          setVideoTab("level-2");
+          setShowAllVideos(false);
           // setShowPersonVideos(false);
-          // setShowLevel2Videos(true);
+          setShowLevel2Videos(true);
         },
         onLeaveBack: () => {
           setHomeView("level-1");
           setVideoTab("egocentric");
+          setShowAllVideos(true);
           // setShowPersonVideos(true);
-          // setShowLevel2Videos(false);
+          setShowLevel2Videos(false);
         },
       },
       {
         onEnter: () => {
           setHomeView("all");
           setShowAllVideos(false);
-          // setShowLevel2Videos(false);
+          setShowLevel2Videos(false);
           // setInteractiveSection(true);
         },
         onLeaveBack: () => {
           setHomeView("level-2");
-          setShowAllVideos(true);
-          // setInteractiveSection(false);
+          setShowAllVideos(false);
+          setShowLevel2Videos(true);
         },
         onLeave: () => {
           // setShowControls(true);

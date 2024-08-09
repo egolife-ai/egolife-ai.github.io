@@ -39,7 +39,7 @@ const Scene = () => {
         </Canvas>
       </div>
       <div className="fixed bottom-0 right-0">
-        <Leva fill hidden />
+        <Leva fill />
       </div>
     </>
   );

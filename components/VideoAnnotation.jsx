@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Tooltip, TooltipContent } from "./Tooltip";
 
-const VideoAnnotation = ({ src, show }) => {
+const VideoAnnotation = ({ src, show, ...props }) => {
   const videoRef = useRef();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -27,6 +27,7 @@ const VideoAnnotation = ({ src, show }) => {
         <Html
           style={{
             pointerEvents: "none",
+            transform: `translate(-200px, 0)`
           }}
         >
           {/* <motion.div
@@ -52,7 +53,8 @@ const VideoAnnotation = ({ src, show }) => {
           <AnimatePresence>
             {show && (
               <motion.div
-                className="h-[150px] w-[250px] origin-top-left overflow-hidden rounded-lg border-2 shadow-xl"
+                // className="h-[150px] w-[250px] origin-top-left overflow-hidden rounded-lg border-2 shadow-xl"
+                className="h-[125px] w-[200px] overflow-hidden rounded-lg border-2 shadow-xl"
                 initial={{
                   opacity: 0,
                   scale: 0,
