@@ -159,30 +159,32 @@ const Controls = () => {
         </RadioGroup> */}
       </div>
 
-      <motion.button
-        id="button-control"
-        className={cn(
-          "animate-pulse rounded-full border bg-yellow-50 p-2 shadow",
-          !allowControl ? "animate-pulse" : "",
-        )}
-        onClick={() => {
-          setAllowControl(!allowControl);
-        }}
-        initial={{ opacity: 0, filter: "blur(4px)" }}
-        animate={{ opacity: 1, filter: "blur(0)" }}
-        exit={{ opacity: 0, filter: "blur(4px)" }}
-      >
-        {allowControl ? (
-          <X className="size-10" />
-        ) : (
-          <div className="flex items-center gap-2 px-2 text-sm font-bold">
-            <Pointer className="size-5" />
-            <div className="leading-tight">
-              Allow zoom <br /> and panning
+      <div className="animate-bounce">
+        <motion.button
+          id="button-control"
+          className={cn(
+            "animate-pulse rounded-full border bg-yellow-50 p-2 shadow",
+            !allowControl ? "animate-pulse" : "",
+          )}
+          onClick={() => {
+            setAllowControl(!allowControl);
+          }}
+          initial={{ opacity: 0, filter: "blur(4px)" }}
+          animate={{ opacity: 1, filter: "blur(0)" }}
+          exit={{ opacity: 0, filter: "blur(4px)" }}
+        >
+          {allowControl ? (
+            <X className="size-10" />
+          ) : (
+            <div className="flex items-center gap-2 px-2 text-sm font-bold">
+              <Pointer className="size-5" />
+              <div className="leading-tight text-teal-600">
+                Allow zoom <br /> and panning
+              </div>
             </div>
-          </div>
-        )}
-      </motion.button>
+          )}
+        </motion.button>
+      </div>
     </div>
   );
 };

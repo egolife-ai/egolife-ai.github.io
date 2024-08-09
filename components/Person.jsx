@@ -33,21 +33,45 @@ const Person = ({
   //   }
   // }, [hovered, homeView, interactiveSection]);
 
-  // useGSAP(() => {
-  //   if (label === "Jake") {
-  //     const tl = gsap
-  //       .timeline({
-  //         repeat: -1,
-  //         repeatDelay: 1,
-  //       })
-  //       .to(ref.current.position, {
-  //         z: "+=1",
-  //         repeat: 1,
-  //         yoyo: true,
-  //         ease: "none",
-  //       });
-  //   }
-  // }, []);
+  useGSAP(() => {
+    // if (label === "Jake") {
+      const tl = gsap
+        .timeline({
+          repeat: -1,
+          repeatDelay: 1 + Math.random(),
+        })
+        // .to(ref.current.position, {
+        //   z: "+=1",
+        //   repeat: 1,
+        //   yoyo: true,
+        //   ease: "none",
+        // });
+        .to(ref.current.rotation, {
+          y: "+=0.3",
+          repeat: 1,
+          yoyo: true,
+          ease: "none",
+        })
+        .to(ref.current.rotation, {
+          y: "-=0.3",
+          repeat: 1,
+          yoyo: true,
+          ease: "none",
+        });
+      // .fromTo(
+      //   ref.current.rotation,
+      //   {
+      //     y: "-=1",
+      //   },
+      //   {
+      //     y: "+=1",
+      //     repeat: 1,
+      //     yoyo: true,
+      //     ease: "none",
+      //   },
+      // );
+    // }
+  }, []);
 
   return (
     <e.group

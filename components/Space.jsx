@@ -93,7 +93,7 @@ const Space = () => {
   useFrame((state, delta) => {
     // Auto rotate
     if (autoRotate) {
-      // controls.current.azimuthAngle += 5 * delta * DEG2RAD;
+      controls.current.azimuthAngle += 5 * delta * DEG2RAD;
     }
   });
 

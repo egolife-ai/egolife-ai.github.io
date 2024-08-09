@@ -150,9 +150,9 @@ const IntroText = () => {
             <span className="text-title-purple">Extremely Long</span>,{" "}
             <span className="text-title-brown">Daily Life</span>
           </TextHeader>
-          <p>
+          <p className="text-justify">
             EgoLife captures a week-long shared living experience of six
-            volunteers planning an Earth Day party. With 60 hours of footage per
+            volunteers planning a party. With 60 hours of footage per
             participant, this dataset enables analysis of long-term event
             connections spanning hours and days, advancing AI research in
             long-context understanding.
@@ -163,7 +163,7 @@ const IntroText = () => {
             <span className="text-title-yellow">Egocentric</span> &{" "}
             <span className="text-title-green">Interpersonal</span>
           </TextHeader>
-          <p>
+          <p className="text-justify">
             The project documents six volunteers engaging in daily chores,
             collaborative activities, conversations, and social interactions.
             Their synchronized egocentric videos offer unique insights into
@@ -179,7 +179,7 @@ const IntroText = () => {
             <span className="text-title-blue">Multi-modal</span> &{" "}
             <span className="text-title-pink">Multi-view</span>
           </TextHeader>
-          <p>
+          <p className="text-justify">
             Participants wear first-person view glasses recording video, gaze,
             and IMU data, synchronized with 15 strategically placed GoPro
             cameras. This multi-view, multi-modal system provides holistic
@@ -195,7 +195,7 @@ const IntroText = () => {
           <TextHeader>
             <span>Extensive Annotation</span>
           </TextHeader>
-          <p>
+          <p className="text-justify">
             The dataset includes extensive annotations: transcriptions, QA
             pairs, and dense captions. We provide a QA set for benchmarking
             long-term egocentric video tasks, focusing on questions requiring
@@ -210,7 +210,8 @@ const IntroText = () => {
         </Text>
         <Text>
           <TextHeader className="text-xl">
-            Now please scroll down and click to explore the EgoHouse to play
+            {/* Now please scroll down and click to explore the EgoHouse to play */}
+            Now please scroll down and click on the <span className="text-teal-600">jumping button</span> to explore the EgoHouse to play
             with the EgoLife Project!
           </TextHeader>
         </Text>
