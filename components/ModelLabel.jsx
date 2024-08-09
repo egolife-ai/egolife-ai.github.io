@@ -13,10 +13,11 @@ const ModelLabel = ({ children, ...props }) => {
         outlineWidth={0.02}
         // depthOffset={-10}
         // renderOrder={-5}
+        // renderOrder={999}
         {...props}
       >
         {children}
-        <meshBasicMaterial color="black" />
+        <meshBasicMaterial color="black" depthTest={false} />
       </Text>
     </Billboard>
   );
