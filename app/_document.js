@@ -1,13 +1,17 @@
-// app/_document.js 或 pages/_document.js
-import { Html, Head, Main, NextScript } from 'next/document';
+import Script from 'next/script';
 
 export default function Document() {
   return (
     <Html>
       <Head>
         {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-SELQYCGE0Z"></script>
-        <script
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-SELQYCGE0Z"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
