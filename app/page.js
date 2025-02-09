@@ -55,8 +55,38 @@ export default function Home() {
 
   if (isMobile) {
     return (
-      <main className="flex min-h-screen flex-col items-center justify-center p-24">
+      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        {/* Navbar */}
+        <motion.div
+          className="fixed top-0 z-20 flex w-full flex-col items-center justify-center"
+          // initial={{ opacity: 0, filter: "blur(4px)" }}
+          // animate={{ opacity: 1, filter: "blur(0)" }}
+          // transition={{ duration: 2, type: "spring" }}
+        >
+          <nav className="grid w-full place-items-center border-b border-white backdrop-blur">
+            <ul className="flex gap-8">
+              <NavItem href="">Paper</NavItem>
+              <NavItem href="">Blog</NavItem>
+              <li>
+                <h1>
+                  <Image
+                    src="/egolife.png"
+                    width={130}
+                    height={130}
+                    alt="EgoLife logo"
+                  />
+                </h1>
+              </li>
+              <NavItem href="">Data</NavItem>
+              <NavItem href="">Code</NavItem>
+            </ul>
+          </nav>
+
         <h1>Welcome to the Mobile Version of the Homepage</h1>
+        </motion.div>
+
+
+        
       </main>
     );
   }
