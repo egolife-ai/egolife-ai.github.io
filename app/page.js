@@ -14,6 +14,7 @@ import Controls from "@/components/Controls";
 import IntroText from "@/components/IntroText";
 import { cn } from "@/lib/utils";
 import VideosGrid from "@/components/VideosGrid";
+import useIsMobile from "@/lib/useIsMobile"; // Import the custom hook
 
 // TODO: Aesthetic like Sims city
 // TODO: Controls can look like a video game
@@ -22,6 +23,9 @@ export const ControlsContext = createContext();
 // export const SceneContext = createContext();
 
 export default function Home() {
+  const isMobile = useIsMobile(); // Use the custom hook
+
+
   const [homeView, setHomeView] = useState("all");
   const [showControls, setShowControls] = useState(false);
   const [allowControl, setAllowControl] = useState(false);
@@ -49,6 +53,13 @@ export default function Home() {
     }
   }, [allowControl]);
 
+  if (isMobile) {
+    return (
+      <main className="flex min-h-screen flex-col items-center justify-center p-24">
+        <h1>Welcome to the Mobile Version of the Homepage</h1>
+      </main>
+    );
+  }
   return (
     <ControlsContext.Provider
       value={{
