@@ -211,7 +211,7 @@ const IntroText = () => {
         <Text>
           <TextHeader className="text-xl">
             {/* Now please scroll down and click to explore the EgoHouse to play */}
-            Now please scroll down and click on the <span className="text-teal-600">'Allow zoom and panning'</span> button on the left to explore the EgoHouse to play
+            Now please scroll down and click on the <span className="text-teal-600">Allow zoom and panning</span> button on the left to explore the EgoHouse to play
             with the EgoLife Project!
           </TextHeader>
         </Text>
