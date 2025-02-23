@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="DESCRIPTION META TAG">
+    <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+    <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+    <meta property="og:url" content="URL OF THE WEBSITE" />
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta property="og:image" content="static/image/your_banner_image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+
+    <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+    <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+    <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Keywords for your paper to be indexed by-->
+    <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>EgoLife Blog</title>
+    <link rel="icon" type="image/x-icon" href="static/images/egolife_circle.ico">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+
+    <script src="js/jquery.countup.js"></script>
+    <script>
+        $('.counter').countUp();
+    </script>
+</head>
+
+<body>
+
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title"><img src="static/images/logo_square.ico" style="width: 20%; height: 20%"/><br>EgoLife: Towards Egocentric Life Assistant</h1>
+                    <div class="is-size-5 publication-authors">
+                        <!-- Paper authors -->
+                        <span class="author-block">
+                            <a href="https://jingkang50.github.io/" target="_blank">Jingkang Yang</a>,</span>
+                        <span class="author-block">
+                            <a href="https://choiszt.github.io/" target="_blank">Shuai Liu</a>,</span>
+                        <span class="author-block">
+                            <a href="https://egolife-ntu.github.io/" target="_blank">Hongming Guo</a>,</span>
+                        <span class="author-block">
+                            <a href="https://scholar.google.com/citations?user=kMui170AAAAJ&hl=zh-CN" target="_blank">Yuhao Dong</a>,</span>
+                        <span class="author-block">
+                            <a href="https://www.researchgate.net/scientific-contributions/Xiamengwei-Zhang-2298207971" target="_blank">Xiamengwei Zhang</a>,</span><br>
+                        <span class="author-block">
+                            <a href="https://fesvhtr.github.io/zsc/" target="_blank">Sicheng Zhang</a>,</span>
+                        <span class="author-block">
+                            <a href="https://openreview.net/profile?id=~Pengyun_Wang2" target="_blank">Pengyun Wang</a>,</span>
+                        <span class="author-block">
+                            <a href="https://scholar.google.com/citations?user=c35sPU8AAAAJ&hl=en" target="_blank">Zitang Zhou</a>,</span>
+                        <span class="author-block">
+                            <a href="https://nicous20.github.io/" target="_blank">Binzhu Xie</a>,</span>
+                        <span class="author-block">
+                            <a href="https://scholar.google.com/citations?user=CSsCwyAAAAAJ&hl=zh-CN&authuser=2" target="_blank">Ziyue Wang</a>,</span>
+                        <span class="author-block">
+                            <a href="https://networks.imdea.org/team/imdea-networks-team/people/bei-ouyang/" target="_blank">Bei Ouyang</a>,</span><br>
+                        <span class="author-block">
+                            <a href="https://scholar.google.com/citations?user=XbFxzicAAAAJ&hl=en" target="_blank">Zhengyu Lin</a>,</span>
+                        <span class="author-block">
+                            <a href="https://www.marcocominelli.com/" target="_blank">Marco Cominelli</a>,</span>
+                        <span class="author-block">
+                            <a href="https://caizhongang.com/" target="_blank">Zhongang Cai</a>,</span>
+                        <span class="author-block">
+                            <a href="https://zhangyuanhan-ai.github.io/" target="_blank">Yuanhan Zhang</a>,</span>
+                        <span class="author-block">
+                            <a href="https://veiled-texture-20c.notion.site/Perry-Peiyuan-Zhang-ab24b48621c9491db767a76df860873a" target="_blank">Peiyuan Zhang</a>,</span><br>
+                        <span class="author-block">
+                            <a href="https://hongfz16.github.io/" target="_blank">Fangzhou Hong</a>,</span>
+                        <span class="author-block">
+                            <a href="https://networks.imdea.org/team/imdea-networks-team/people/joerg-widmer/" target="_blank">Joerg Widmer</a>,</span>
+                        <span class="author-block">
+                            <a href="https://ans.unibs.it/people/gringoli/" target="_blank">Francesco Gringoli</a>,</span>
+                        <span class="author-block">
+                            <a href="https://scholar.google.com.hk/citations?user=jZH2IPYAAAAJ&hl=en" target="_blank">Lei Yang</a>,</span>
+                        <span class="author-block">
+                            <a href="https://brianboli.com/" target="_blank">Bo Li</a>,</span>
+                        <span class="author-block">
+                            <a href="https://liuziwei7.github.io/" target="_blank">Ziwei Liu</a></span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><sup>1</sup>S-Lab, Nanyang Technological University, Singapore &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <sup>2</sup>LMMs-Lab<br> <sup>3</sup>SenseTime Research &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <sup>4</sup>IMDEA Networks, Spain &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <sup>5</sup>University of Brescia, Italy</span>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- ArXiv abstract Link -->
+                            <span class="link-block">
+                  <a href="https://arxiv.org/" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                                <span>arXiv</span>
+                                </a>
+                                </span>
+                            <!-- Dataset -->
+                            <span class="link-block">
+                  <a href="https://huggingface.co/datasets/EgoLife" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <p style="font-size:20px">&#x1F917;</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+
+                            <!-- Github link -->
+                            <span class="link-block">
+                    <a href="https://github.com/LMMs-Lab/EgoLife" target="_blank"
+                       class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                                <span>Code</span>
+                                </a>
+                                </span>
+
+                            <!-- Video link-->
+                            <span class="link-block">
+                  <a href="https://youtu.be/" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <p style="font-size:20px">&#127902;</p>
+                  </span>
+                  <span>EgoLife Short Trailer</span>
+                </a>
+              </span>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- add a video carousel here -->
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        We introduce <font color="#2E86C1"><b>EgoLife</b></font>, a project to develop an egocentric life assistant that accompanies and enhances personal efficiency through AI-powered wearable glasses 👓. To lay the foundation for this assistant, we conducted a comprehensive data collection study where six participants lived together for one week, continuously recording their daily activities—including discussions 💬, shopping 🛍️, cooking 🍳, socializing 👥, and entertainment 🎮—using AI glasses for multimodal egocentric video capture, along with synchronized third-person-view video references. This effort resulted in the <font color="#2E86C1"><b>EgoLife Dataset</b></font> 📖, a comprehensive 300-hour egocentric, interpersonal, multiview, and multimodal daily life dataset with intensive annotation. Leveraging this dataset, we introduce <font color="#E74C3C"><b>EgoLifeQA</b></font>❓, a suite of 6K long-context, life-oriented question-answering tasks designed to provide meaningful assistance in daily life by addressing practical questions such as recalling past relevant events, monitoring health habits, and offering personalized recommendations.
+                        <br><br>
+                        To address the key technical challenges of <font color="#27AE60">1)</font> developing robust visual-audio models for egocentric data, <font color="#27AE60">2)</font> enabling identity recognition, and <font color="#27AE60">3)</font> facilitating long-context question answering over extensive temporal information, we introduce <font color="#8E44AD"><b>EgoBulter</b></font> 🫡, an integrated system comprising <font color="#E67E22"><b>EgoGPT</b></font> 🧠 and <font color="#E67E22"><b>EgoRAG</b></font> 🔍. EgoGPT is a vision-language model trained on egocentric datasets, achieving state-of-the-art performance on egocentric video understanding. EgoRAG is a retrieval-based component that supports answering ultra-long-context questions. Our experimental studies verify their working mechanisms and reveal critical factors and bottlenecks, guiding future improvements. By releasing our datasets, models, and benchmarks, we aim to stimulate further research in egocentric AI assistants.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End paper abstract -->
+
+
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container">
+        <h2 class="title is-2" style="text-align: center;">The EgoLife Dataset</h2>
+        <h2 class="title is-3" style="text-align: center;">
+            <font color="#2E86C1"><b>The EgoLife dataset</b></font> captures the lives of six participants over seven days,<br>
+            recorded through <font color="#8E44AD">Meta Aria glasses</font>.<br>
+            Living together with a shared goal of organizing an <font color="#27AE60">Earth Day Event</font>,<br>
+            their experiences are preserved in over <font color="#E67E22"><b>250 hours</b></font> of rich, everyday data.<br>
+            This includes <span style="color:#808080">egocentric</span>, <span style="color:#808080">interpersonal</span> and <span style="color:#808080">multiview</span> moments,<br>
+            offering a detailed and intimate view of their lives and teamwork.
+        </h2>
+        <div class="columns is-centered">
+            <div class="column is-four-fifths">
+                <div style="width: 100%; margin: 0 auto;">
+                    <video width="100%" poster="" id="tree" autoplay controls muted loop>
+                        <source src="static/videos/trailer_0224.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Video carousel -->
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-3" style="text-align: center;">
+                <font color="#2E86C1"><b>The EgoLife dataset</b></font> captures the lives of six participants over seven days,<br>
+                recorded through <font color="#8E44AD">Meta Aria glasses</font>.<br>
+                Living together with a shared goal of organizing an <font color="#27AE60">Earth Day Event</font>,<br>
+                their experiences are preserved in over <font color="#E67E22"><b>250 hours</b></font> of rich, everyday data.<br>
+                This includes <span style="color:#808080">egocentric</span>, <span style="color:#808080">interpersonal</span> and <span style="color:#808080">multiview</span> moments,<br>
+                offering a detailed and intimate view of their lives and teamwork.
+            </h2>
+            <div id="results-carousel" class="carousel results-carousel">
+                <div class="item">
+                    <div style="min-width: 300px;
+                      margin-right: 20px;">
+                        <video width="80%" poster="" id="tree" autoplay controls muted loop height="100%">
+                            <!-- Your video here -->
+                            <source src="static/videos/H_T_716_0000_0285.mp4"
+                                    type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="demo-questions">
+                        <div>
+                            <p style="font-size: 18px;
+                          line-height: 20px;
+                          margin: 5px 0;
+                          font-weight: 400;
+                          color: #161616;">What's the most interesting moment of this video?</p>
+                            <hr style="border: none; height: 4px; background-color: #EB4A4A;">
+                            <p style="font-size: 14px;
+                          margin-bottom: 5px;
+                          line-height: 18px;">The most intersting moment is from frame 22 to 211.</p>
+                        </div>
+                    </div>
+                    <div class="demo-questions">
+                        <div>
+                            <p style="font-size: 18px;
+                        line-height: 20px;
+                        margin: 5px 0;
+                        font-weight: 400;
+                        color: #161616;">Can you describe the humorous segment of this video?</p>
+                            <hr style="border: none; height: 4px; background-color: #EB4A4A;">
+                            <p style="font-size: 14px;
+                        margin-bottom: 5px;
+                        line-height: 18px;">There was a small toy at the door of the bathroom. A black and white cat went behind the bathroom door and started to use its paws to reach its toy from the doorway.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="demo-questions">
+                        <div>
+                            <p style="font-size: 18px;
+                      line-height: 20px;
+                      margin: 5px 0;
+                      font-weight: 400;
+                      color: #161616;">Why is this video interesting and engaging？
+                            </p>
+                            <hr style="border: none; height: 4px; background-color: #EB4A4A;">
+                            <p style="font-size: 14px;
+                      margin-bottom: 5px;
+                      line-height: 18px;">The cat could have taken its toy directly to play, but it had to go behind the door to reach its toy from the doorway. As the paws are too short to reach to reach, this behavior result in a cute and funny scene.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="demo-questions">
+                        <div>
+                            <p style="font-size: 18px;
+                    line-height: 20px;
+                    margin: 5px 0;
+                    font-weight: 400;
+                    color: #161616;">Write an suitable title for this funny video.</p>
+                            <hr style="border: none; height: 4px; background-color: #EB4A4A;">
+                            <p style="font-size: 14px;
+                    margin-bottom: 5px;
+                    line-height: 18px;">Legs are never longer than enough.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="item2">
+                    <div style="min-width: 300px;
+                        margin-right: 8px;">
+                        <video width="80%" poster="" id="tree" autoplay controls muted loop height="100%">
+                            <!-- Your video here -->
+                            <source src="static/videos/C_KT_6_7507_7604.mp4"
+                                    type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="demo-questions">
+                        <div>
+                            <p style="font-size: 18px;
+                            line-height: 20px;
+                            margin: 5px 0;
+                            font-weight: 400;
+                            color: #161616;">When is the creative segment of the video?</p>
+                            <hr style="border: none; height: 4px; background-color: #F5D247;">
+                            <p style="font-size: 14px;
+                            margin-bottom: 5px;
+                            line-height: 18px;">The creative moment is from frame 2 to 53.</p>
+                        </div>
+                    </div>
+                    <div class="demo-questions">
+                        <div>
+                            <p style="font-size: 18px;
+                          line-height: 20px;
+                          margin: 5px 0;
+                          font-weight: 400;
+                          color: #161616;">What happened during the creative segment?</p>
+                            <hr style="border: none; height: 4px; background-color: #F5D247;">
+                            <p style="font-size: 14px;
+                          margin-bottom: 5px;
+                          line-height: 18px;"><br>In the middle of the stage was a man sitting on a chair playing the guitar. A little girl wearing piano outfit turned around. Then she took off the outermost clothes and made herself inverted. The man picked her up
+                                onto his shoulders, and his one hand held the girl's legs, the other hand catched a small wooden stick.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="demo-questions">
+                        <div>
+                            <p style="font-size: 18px;
+                        line-height: 20px;
+                        margin: 5px 0;
+                        font-weight: 400;
+                        color: #161616;">Why do you think the segment is creative?
+                            </p>
+                            <hr style="border: none; height: 4px; background-color: #F5D247;">
+                            <p style="font-size: 14px;
+                        margin-bottom: 5px;
+                        line-height: 18px;">The creative point of this video is that, the little girl changes outfits and body postures constantly to simulate the violin, with the man simulating the scene of playing the violin.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="demo-questions">
+                        <div>
+                            <p style="font-size: 18px;
+                      line-height: 20px;
+                      margin: 5px 0;
+                      font-weight: 400;
+                      color: #161616;">Please give this creative video a title to best represent its shine point. Also, score the creativity of the video on a scale of 0 to 20. </p>
+                            <hr style="border: none; height: 4px; background-color: #F5D247;">
+                            <p style="font-size: 14px;
+                      margin-bottom: 5px;
+                      line-height: 18px;">The title is: the 'startled' concert. And I will score this video 19 for creativity.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="item3">
+                    <div style="min-width: 300px;
+                        margin-right: 20px;">
+                        <video width="80%" poster="" id="tree" autoplay controls muted loop height="100%">
+                            <!-- Your video here -->
+                            <source src="static/videos/M_Z_239_6603_6800.mp4"
+                                    type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="demo-questions">
+                        <div>
+                            <p style="font-size: 18px;
+                            line-height: 20px;
+                            margin: 5px 0;
+                            font-weight: 400;
+                            color: #161616;">In what period the magic took place?</p>
+                            <hr style="border: none; height: 4px; background-color: #8FD8FB;">
+                            <p style="font-size: 14px;
+                            margin-bottom: 5px;
+                            line-height: 18px;">The magic moment is from frame 71 to 119.</p>
+                        </div>
+                    </div>
+                    <div class="demo-questions">
+                        <div>
+                            <p style="font-size: 18px;
+                          line-height: 20px;
+                          margin: 5px 0;
+                          font-weight: 400;
+                          color: #161616;">Can you describe the magical segment of this video?</p>
+                            <hr style="border: none; height: 4px; background-color: #8FD8FB;">
+                            <p style="font-size: 14px;
+                          margin-bottom: 5px;
+                          line-height: 18px;">The man reached out his hand, took one of the clouds from the sky, and put it into his mouth.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="demo-questions">
+                        <div>
+                            <p style="font-size: 18px;
+                        line-height: 20px;
+                        margin: 5px 0;
+                        font-weight: 400;
+                        color: #161616;">How can you tell that the video showcases magic?
+                            </p>
+                            <hr style="border: none; height: 4px; background-color: #8FD8FB;">
+                            <p style="font-size: 14px;
+                        margin-bottom: 5px;
+                        line-height: 18px;">What's commonsense-violating is that, people standing on the ground can't touch the clouds, so the clouds can't be taken down by the man.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="demo-questions">
+                        <div>
+                            <p style="font-size: 18px;
+                      line-height: 20px;
+                      margin: 5px 0;
+                      font-weight: 400;
+                      color: #161616;">What method do you think the magician used to accomplish the magic trick?</p>
+                            <hr style="border: none; height: 4px; background-color: #8FD8FB;">
+                            <p style="font-size: 14px;
+                      margin-bottom: 5px;
+                      line-height: 18px;">The magician used video editing technology to combine a video of reaching for the cloud with a video of eating a marshmallow to create the magic effect.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End image carousel -->
+
+<!-- Teaser video-->
+<!--
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <video poster="" id="tree" autoplay controls muted loop height="100%">
+
+    <source src="static/videos/banner_video.mp4"
+    type="video/mp4">
+  </video>
+            <h2 class="subtitle has-text-centered">
+                Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus.
+            </h2>
+        </div>
+    </div>
+</section>-->
+<!-- End teaser video -->
+
+
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-3" style="text-align: center;">
+                Upon the <font color=#f44a5e>EgoLife dataset</font>, we create <font color=#f17338>EgoLifeQA</font> that composes 6K life-oriented ultra-long-context questions. 75% of them needed backtracking more than 2 hours, 28% needed more than 24 hours.
+            </h2>
+            <div id="results-carousel1" class="carousel results-carousel1">
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="title is-3" style="text-align: center;">Overview of FunQA.</h2>
+                    <img src="static/images/fig_main.png" alt="MY ALT TEXT" />
+                    <h2 class="subtitle">
+                        <br>FunQA comprises three subsets of surprising videos: 1) HumorQA, 2) CreativeQA, and 3) MagicQA. Each subset is associated with three common tasks: <em>1) counter-intuitive timestamp localization}, </em><em>2) detailed video description}, and 3) reasoning around counter-intuitiveness</em>                            } (see
+                        <b>H1-3</b>,
+                        <b>C1-3</b>, and
+                        <b>M1-3</b>). Furthermore, we offer higher-level tasks tailored for each video type, such as <em>attributing a fitting and vivid title</em> for HumorQA and CreativeQA (see
+                        <b>H4</b>,
+                        <b>H4</b>), etc.
+                    </h2>
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="title is-3" style="text-align: center;">Dataset statistics</h2>
+                    <img src="static/images/statics.png" alt="MY ALT TEXT" />
+                    <h2 class="subtitle">
+                        <br>FunQA consists of three subsets, each corresponding to different video types, and is annotated with free-text QA pairs. The first row displays word clouds representing critical annotations for each subset. The second row
+                        provides key dataset statistics, including the number of videos for different splits, video length, and QA pair count for three subsets. In the last row, (g) highlights the high-frequency time span of the answer for localization
+                        questions in red, (h) shows the average word count of answers, and (i) presents the percentage of consensus between annotators for the same answer in a sampled set.
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End image carousel -->
+
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container">
+            <div id="results-carousel1" class="carousel results-carousel1">
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="title is-3" style="text-align: center;">Comparison between different benchmarks</h2>
+                    <h2 class="subtitle">
+                        <br>Compare to other datasets, FunQA revolves around the captivating realm of interesting and counter-intuitive videos. The tasks within FunQA are specifically designed to challenge the vision capabilities of models, requiring
+                        strong skills in producing an in-depth description, interpretation, and spatial-temporal reasoning. Here we clarify the abbreviation in the table. 
+                        <b>Avg Len</b>b> denotes video average length; <b># Clips</b>b> means number of video clips; <b>VC</b> for visual-centric, <b>Des.</b> for Description, <b>Exp.</b> for Explanation, 
+                        <b>STR</b> for Spatial-temporal Reasoning, <b>MC</b> means Multiple Choice QA, and <b>OE</b> shows Open Ended QA with <b>Average Word Count</b> per response.
+                    </h2>
+                    <img src="static/images/table1.png" alt="MY ALT TEXT" />
+
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="title is-3" style="text-align: center;">Main result for baselines</h2>
+                    <h2 class="subtitle">
+                        <br>The FunQA benchmark consists of four task categories. H1, C1, M1 represent the counter-intuitive timestamp localization task, where IOU is used as the metric. H2, C2, M2 represent the detailed video description task, and
+                        H3, C3, M3 represent reasoning around counter-intuitiveness. For the higher-level tasks, H4, C4 involve attributing a fitting and vivid title. The responses for all these tasks in free-text format. We use the following metrics:
+                        BLEU-4 / ROUGE-L / CIDEr (shown in the first row) and BLEURT / GPT-4 (shown in the second row) for evaluation. C5 represents scoring the video creativity, and the metric is the <b>Accuracy</b> between the predicted score and the
+                        official score. We tested the caption-based and instruction-based models. Here we clarify the abbreviation in the table. F denotes Frame-rate L.M.: GIT_LARGE_MSRVTT; L.V.: GIT_LARGE_VATEX; D.C. means finetuned on Dense Caption; FunQA means
+                        finetuned on FunQA.
+                    </h2>
+                    <img src="static/images/table.png" alt="MY ALT TEXT" />
+
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="title is-3" style="text-align: center;">Comparison of responses from different models</h2>
+                    <h2 class="subtitle">
+                        <br>Here shows the answers given by VideoChat, Video-ChatGPT, and Otter on HumorQA video. On task H2, H3, VideoChat has the best performance. On task H4, Video-ChatGPT and Otter answer better, which is in line with our experiment
+                        result. However, the answers from all models are still far from the ground truth. The descriptions of details and counter-intuitive explanations have numerous shortcomings. For example, Video-ChatGPT added incorrect details
+                        to the description, such as "wearing sunglasses", the humorous reason for "throwing ketchup" was wrongly interpreted by VideoChat as "knocking over the ketchup bottle", etc.
+                    </h2>
+                    <img src="static/images/model_comparison.png" alt="MY ALT TEXT" />
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End image carousel -->
+
+
+<!-- Youtube video
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-3">Video Presentation</h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+
+                    <div class="publication-video">
+                        <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+End youtube video -->
+
+
+<!-- Video carousel
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-3">Another Carousel</h2>
+            <div id="results-carousel" class="carousel results-carousel">
+                <div class="item item-video1">
+                    <video poster="" id="video1" autoplay controls muted loop height="100%">
+        <source src="static/videos/carousel1.mp4"
+        type="video/mp4">
+      </video>
+                </div>
+                <div class="item item-video2">
+                    <video poster="" id="video2" autoplay controls muted loop height="100%">
+        <source src="static/videos/carousel2.mp4"
+        type="video/mp4">
+      </video>
+                </div>
+                <div class="item item-video3">
+                    <video poster="" id="video3" autoplay controls muted loop height="100%">
+        <source src="static/videos/carousel3.mp4"
+        type="video/mp4">
+      </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title" style="text-align: center;">Paper</h2>
+
+            <iframe src="static/pdfs/FunQA.pdf" width="100%" height="550">
+            </iframe>
+
+        </div>
+    </div>
+</section> -->
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@inproceedings{xie2025funqa,
+  title={Funqa: Towards surprising video comprehension},
+  author={Xie, Binzhu and Zhang, Sicheng and Zhou, Zitang and Li, Bo and Zhang, Yuanhan and Hessel, Jack and Yang, Jingkang and Liu, Ziwei},
+  booktitle={European Conference on Computer Vision},
+  pages={39--57},
+  year={2025},
+  organization={Springer}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+
+                    <p>
+                        This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"
+                                                                                                                                                                                                                             target="_blank">Creative
+                        Commons Attribution-ShareAlike 4.0 International License</a>.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+<!-- End of Statcounter Code -->
+
+</body>
+
+</html>
