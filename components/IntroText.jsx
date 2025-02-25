@@ -1,11 +1,14 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useContext, useMemo, useRef } from "react";
+import { useState, useContext, useMemo, useRef, useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
 import { ControlsContext, SceneContext } from "@/app/page";
 import { Mouse, Pointer } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Driver, { driver } from "driver.js";
+
+import "driver.js/dist/driver.css";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -14,6 +17,7 @@ const textY = 100;
 
 const IntroText = () => {
   const textContainer = useRef();
+  const [showDriver, setshowDriver] = useState(false);
 
   const {
     setShowWalls,
@@ -75,6 +79,8 @@ const IntroText = () => {
           setHomeView("all");
           setShowAllVideos(false);
           setShowLevel2Videos(false);
+          setshowDriver(fasle);
+
           // setInteractiveSection(true);
         },
         onLeaveBack: () => {
@@ -83,6 +89,8 @@ const IntroText = () => {
           setShowLevel2Videos(true);
         },
         onLeave: () => {
+          GoBottom();
+          // setshowDriver(true);
           // setShowControls(true);
         },
         onEnterBack: () => {
@@ -92,6 +100,161 @@ const IntroText = () => {
       },
     ];
   }, []);
+
+  const GoBottom = () => {
+    let isFinish = window.localStorage.getItem("hasFinishedStep");
+    if (isFinish === "false" || isFinish == null) {
+      setshowDriver(true);
+    }
+  };
+
+  // useEffect(() => {
+  //   const driverObj = driver({
+  //     closeBtnText: "关闭",
+  //     nextBtnText: "下一步",
+  //     prevBtnText: "上一步",
+  //     doneBtnText: "完成",
+  //     steps: [
+  //       {
+  //         element: "#driver-step1",
+
+  //         popover: {
+  //           title: "步骤 1",
+
+  //           description: "这是步骤 1 的描述。",
+
+  //           position: "right",
+  //         },
+  //       },
+
+  //       {
+  //         element: "#driver-step2",
+
+  //         popover: {
+  //           title: "步骤 2",
+
+  //           description: "这是步骤 2 的描述。",
+
+  //           position: "bottom",
+  //         },
+  //       },
+  //       {
+  //         element: "#driver-step3",
+
+  //         popover: {
+  //           title: "步骤 3",
+
+  //           description: "这是步骤 3 的描述。",
+
+  //           position: "right",
+  //         },
+  //       },
+
+  //       {
+  //         element: "#driver-step4",
+  //         popover: {
+  //           title: "步骤 4",
+  //           description: "这是步骤 4 的描述。",
+  //           position: "bottom",
+  //         },
+  //       },
+  //       {
+  //         element: "#button-control",
+  //         popover: {
+  //           title: '<em>步骤 5</em>',
+  //           description: "这是步骤 5 的描述。",
+  //           position: "right",
+  //         },
+  //       },
+  //     ],
+  //   });
+  //   if (showDriver) {
+  //     driverObj.drive(); // 启动引导
+  //   }
+  // }, [showDriver]);
+
+  useEffect(() => {
+    // 初始化 driver.js
+    if (!showDriver) {
+      return;
+    }
+    const driverObj = driver({
+      closeBtnText: "Skip",
+      nextBtnText: "Next",
+      prevBtnText: "Previous",
+      onNextClick: (element, step) => {
+        driverObj?.moveNext();
+        if (step?.element === "#button-control") {
+          window.localStorage.setItem("hasFinishedStep", true);
+        }
+      },
+      background: "#e9ecef",
+      doneBtnText: "Finish",
+
+      onCloseClick: () => {
+        setshowDriver(false);
+        window.localStorage.setItem("hasFinishedStep", true);
+      },
+
+      steps: [
+        {
+          element: "#driver-step1",
+          popover: {
+            title: "Step 1",
+            // description: `<div className="bg-[#e9ecef]">Click here to show/hide the wall/roof. Remember, you need to hide the wall/roof to proceed to the next step.</div>`,
+            description:
+              "Click here to show/hide the wall/roof. Remember, you need to hide the wall/roof to proceed to the next step.",
+            position: "bottom",
+          },
+        },
+        {
+          element: "#driver-step2",
+          popover: {
+            title: "Step 2",
+            description:
+              "Click here to display the second-floor layout. You can hover over the wall-mounted cameras to view third-person perspective videos.",
+            position: "bottom",
+          },
+        },
+        {
+          element: "#driver-step3",
+          popover: {
+            title: "Step 3",
+            description:
+              "Click here to display the first-floor layout. You can hover over the animals to watch their first-person perspective videos.",
+            position: "bottom",
+          },
+        },
+        {
+          element: "#driver-step4",
+          popover: {
+            title: "Step 4",
+            description:
+              "Click here to view our synchronized first-person and third-person perspective videos.",
+            position: "bottom",
+          },
+        },
+        {
+          element: "#button-control",
+          popover: {
+            title: "<em>Step 5</em>",
+            description:
+              "Click here to drag the house and change the viewing angle. Use the scroll wheel to zoom in and out. Click again to return to viewing mode. Enjoy exploring EgoHouse!",
+            position: "bottom",
+          },
+        },
+      ],
+    });
+
+    // 启动引导
+    if (showDriver) {
+      driverObj.drive();
+      // driver.start();
+    }
+    return () => {
+      driverObj?.destroy();
+    };
+  }, [showDriver]);
 
   useGSAP(
     () => {
@@ -208,13 +371,12 @@ const IntroText = () => {
             with the EgoLife Project!
           </InteractionPrompt> */}
         </Text>
-        <Text>
+        {/* <Text>
           <TextHeader className="text-xl">
-            {/* Now please scroll down and click to explore the EgoHouse to play */}
             Now please scroll down and click on the <span className="text-teal-600">Allow zoom and panning</span> button on the left to explore the EgoHouse to play
             with the EgoLife Project!
           </TextHeader>
-        </Text>
+        </Text> */}
       </div>
     </>
   );

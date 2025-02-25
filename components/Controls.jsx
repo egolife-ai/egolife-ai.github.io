@@ -85,6 +85,7 @@ const Controls = () => {
             pressed={showWalls}
             onPressedChange={setShowWalls}
             className="px-2"
+            id="driver-step1"
           >
             <BrickWall className="size-4" />
           </Toggle>
@@ -102,11 +103,11 @@ const Controls = () => {
               <Home className="size-5" />
             </Label>
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2" id="driver-step3">
             <RadioGroupItem value="level-1" id="level-1" />
             <Label htmlFor="level-1">Level 1</Label>
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2" id="driver-step2">
             <RadioGroupItem value="level-2" id="level-2" />
             <Label htmlFor="level-2">Level 2</Label>
           </div>
@@ -135,6 +136,7 @@ const Controls = () => {
             pressed={showAllVideos}
             onPressedChange={setShowAllVideos}
             className="px-2"
+            id="driver-step4"
           >
             <Cctv className="size-4" />
           </Toggle>
