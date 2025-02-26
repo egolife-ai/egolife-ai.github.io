@@ -83,6 +83,7 @@ export default function Home() {
           </nav>
 
         <h1>Welcome to the Mobile Version of the Homepage</h1>
+        <p>Please visit the desktop version for a better experience.</p>
         </motion.div>
 
 

@@ -372,7 +372,7 @@ const IntroText = () => {
           </InteractionPrompt> */}
         </Text>
         <Text>
-          <TextHeader className="text-xl">
+          <TextHeader className="text-justify">
             Now please scroll down and explore the EgoHouse, enjoy!
           </TextHeader>
         </Text>
