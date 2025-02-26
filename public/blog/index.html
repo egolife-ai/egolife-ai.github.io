@@ -219,6 +219,7 @@
 <section class="hero is-small is-light">
     <div class="hero-body">
         <div class="container">
+            <h2 class="title is-2" style="text-align: center;">What EgoLife Captures and Annotates</h2>
             <h2 class="title is-3" style="text-align: center;">
                 <font color="#2E86C1"><b>The EgoLife dataset</b></font> captures the lives of six participants over seven days,<br>
                 recorded through <font color="#8E44AD">Meta Aria glasses</font>.<br>
@@ -228,206 +229,77 @@
                 offering a detailed and intimate view of their lives and teamwork.
             </h2>
             <div id="results-carousel" class="carousel results-carousel">
+                <div class="item0">
+                    <h3 class="title is-4" style="text-align: center;">Multimodal Data Collection</h3>
+                    <div style="min-width: 300px;
+                        margin-right: 20px;
+                        text-align: center;">
+                        <img src="static/images/egolife_teaser.png" width="90%" height="100%" style="margin: 0 auto;">
+                        <h2 class="subtitle" style="margin-top: 20px; font-size: 16px; color: #666;">
+                            The EgoLife dataset contains rich multimodal signals including first-person video and audio recordings, eye gaze tracking data, IMU motion sensors, GPS location information, and environmental audio, providing a comprehensive view of daily activities.
+                        </h2>
+                    </div>
+                </div>
+                <div class="item0">
+                    <h3 class="title is-4" style="text-align: center;">Living Environment</h3>
+                    <div style="min-width: 300px;
+                        margin-right: 20px;
+                        text-align: center;">
+                        <img src="static/images/egohouse.png" width="60%" height="60%" style="margin: 0 auto;">
+                        <h2 class="subtitle" style="margin-top: 20px; font-size: 16px; color: #666;">
+                        The image shows a 3D reconstruction of the shared living space created using Aria Multi-MPS. The house also features 15 Exo cameras installed throughout the common areas and 2 mmWave devices (marked in red) positioned on the second floor. The visualization also includes color-coded traces showing 10-minute movement patterns of the participants throughout the house.
+                        </h2>
+                    </div>
+                </div>
+                <div class="item0">
+                    <h3 class="title is-4" style="text-align: center;">Time Synchronization</h3>
+                    <div style="min-width: 300px;
+                        margin-right: 20px;
+                        text-align: center;">
+                        <img src="static/images/timesync.png" width="90%" height="90%" style="margin: 0 auto;">
+                        <h2 class="subtitle" style="margin-top: 20px; font-size: 16px; color: #666;">
+                        The image shows the time synchronization of the egocentric and third-person views. The third-person view is synchronized with the egocentric view.
+                        </h2>
+                    </div>
+                </div>
+                <div class="item0">
+                    <h3 class="title is-4" style="text-align: center;">Activity Timeline</h3>
+                    <div style="min-width: 300px;
+                        margin-right: 20px;
+                        text-align: center;">
+                        <img src="static/images/timeline.png" width="90%" height="100%" style="margin: 0 auto;">
+                        <h2 class="subtitle" style="margin-top: 20px; font-size: 16px; color: #666;">
+                        The timeline provides a comprehensive overview of each participant's activities across the seven days, showing how they spent their time individually and collaboratively. From daily routines to team meetings and event preparations, it offers a clear visualization of the participants' journey throughout the study period.
+                        </h2>
+                    </div>
+                </div>
                 <div class="item">
                     <div style="min-width: 300px;
-                      margin-right: 20px;">
-                        <video width="80%" poster="" id="tree" autoplay controls muted loop height="100%">
+                      margin-right: 5px;">
+                        <video width="100%" poster="" id="tree" autoplay controls muted loop height="100%">
                             <!-- Your video here -->
-                            <source src="static/videos/H_T_716_0000_0285.mp4"
+                            <source src="static/videos/DAY3_A6_SHURE_14553000.mp4"
                                     type="video/mp4">
                         </video>
                     </div>
                     <div class="demo-questions">
-                        <div>
+                        <div style="width: 100%;">
                             <p style="font-size: 18px;
                           line-height: 20px;
                           margin: 5px 0;
                           font-weight: 400;
-                          color: #161616;">What's the most interesting moment of this video?</p>
-                            <hr style="border: none; height: 4px; background-color: #EB4A4A;">
-                            <p style="font-size: 14px;
-                          margin-bottom: 5px;
-                          line-height: 18px;">The most intersting moment is from frame 22 to 211.</p>
+                          color: #161616;">
+                          </p>
                         </div>
                     </div>
                     <div class="demo-questions">
-                        <div>
-                            <p style="font-size: 18px;
-                        line-height: 20px;
-                        margin: 5px 0;
-                        font-weight: 400;
-                        color: #161616;">Can you describe the humorous segment of this video?</p>
-                            <hr style="border: none; height: 4px; background-color: #EB4A4A;">
-                            <p style="font-size: 14px;
-                        margin-bottom: 5px;
-                        line-height: 18px;">There was a small toy at the door of the bathroom. A black and white cat went behind the bathroom door and started to use its paws to reach its toy from the doorway.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="demo-questions">
-                        <div>
-                            <p style="font-size: 18px;
-                      line-height: 20px;
-                      margin: 5px 0;
-                      font-weight: 400;
-                      color: #161616;">Why is this video interesting and engaging？
-                            </p>
-                            <hr style="border: none; height: 4px; background-color: #EB4A4A;">
-                            <p style="font-size: 14px;
-                      margin-bottom: 5px;
-                      line-height: 18px;">The cat could have taken its toy directly to play, but it had to go behind the door to reach its toy from the doorway. As the paws are too short to reach to reach, this behavior result in a cute and funny scene.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="demo-questions">
-                        <div>
-                            <p style="font-size: 18px;
-                    line-height: 20px;
-                    margin: 5px 0;
-                    font-weight: 400;
-                    color: #161616;">Write an suitable title for this funny video.</p>
-                            <hr style="border: none; height: 4px; background-color: #EB4A4A;">
-                            <p style="font-size: 14px;
-                    margin-bottom: 5px;
-                    line-height: 18px;">Legs are never longer than enough.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="item2">
-                    <div style="min-width: 300px;
-                        margin-right: 8px;">
-                        <video width="80%" poster="" id="tree" autoplay controls muted loop height="100%">
-                            <!-- Your video here -->
-                            <source src="static/videos/C_KT_6_7507_7604.mp4"
-                                    type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="demo-questions">
-                        <div>
-                            <p style="font-size: 18px;
-                            line-height: 20px;
-                            margin: 5px 0;
-                            font-weight: 400;
-                            color: #161616;">When is the creative segment of the video?</p>
-                            <hr style="border: none; height: 4px; background-color: #F5D247;">
-                            <p style="font-size: 14px;
-                            margin-bottom: 5px;
-                            line-height: 18px;">The creative moment is from frame 2 to 53.</p>
-                        </div>
-                    </div>
-                    <div class="demo-questions">
-                        <div>
+                        <div style="width: 100%;">
                             <p style="font-size: 18px;
                           line-height: 20px;
                           margin: 5px 0;
                           font-weight: 400;
-                          color: #161616;">What happened during the creative segment?</p>
-                            <hr style="border: none; height: 4px; background-color: #F5D247;">
-                            <p style="font-size: 14px;
-                          margin-bottom: 5px;
-                          line-height: 18px;"><br>In the middle of the stage was a man sitting on a chair playing the guitar. A little girl wearing piano outfit turned around. Then she took off the outermost clothes and made herself inverted. The man picked her up
-                                onto his shoulders, and his one hand held the girl's legs, the other hand catched a small wooden stick.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="demo-questions">
-                        <div>
-                            <p style="font-size: 18px;
-                        line-height: 20px;
-                        margin: 5px 0;
-                        font-weight: 400;
-                        color: #161616;">Why do you think the segment is creative?
-                            </p>
-                            <hr style="border: none; height: 4px; background-color: #F5D247;">
-                            <p style="font-size: 14px;
-                        margin-bottom: 5px;
-                        line-height: 18px;">The creative point of this video is that, the little girl changes outfits and body postures constantly to simulate the violin, with the man simulating the scene of playing the violin.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="demo-questions">
-                        <div>
-                            <p style="font-size: 18px;
-                      line-height: 20px;
-                      margin: 5px 0;
-                      font-weight: 400;
-                      color: #161616;">Please give this creative video a title to best represent its shine point. Also, score the creativity of the video on a scale of 0 to 20. </p>
-                            <hr style="border: none; height: 4px; background-color: #F5D247;">
-                            <p style="font-size: 14px;
-                      margin-bottom: 5px;
-                      line-height: 18px;">The title is: the 'startled' concert. And I will score this video 19 for creativity.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="item3">
-                    <div style="min-width: 300px;
-                        margin-right: 20px;">
-                        <video width="80%" poster="" id="tree" autoplay controls muted loop height="100%">
-                            <!-- Your video here -->
-                            <source src="static/videos/M_Z_239_6603_6800.mp4"
-                                    type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="demo-questions">
-                        <div>
-                            <p style="font-size: 18px;
-                            line-height: 20px;
-                            margin: 5px 0;
-                            font-weight: 400;
-                            color: #161616;">In what period the magic took place?</p>
-                            <hr style="border: none; height: 4px; background-color: #8FD8FB;">
-                            <p style="font-size: 14px;
-                            margin-bottom: 5px;
-                            line-height: 18px;">The magic moment is from frame 71 to 119.</p>
-                        </div>
-                    </div>
-                    <div class="demo-questions">
-                        <div>
-                            <p style="font-size: 18px;
-                          line-height: 20px;
-                          margin: 5px 0;
-                          font-weight: 400;
-                          color: #161616;">Can you describe the magical segment of this video?</p>
-                            <hr style="border: none; height: 4px; background-color: #8FD8FB;">
-                            <p style="font-size: 14px;
-                          margin-bottom: 5px;
-                          line-height: 18px;">The man reached out his hand, took one of the clouds from the sky, and put it into his mouth.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="demo-questions">
-                        <div>
-                            <p style="font-size: 18px;
-                        line-height: 20px;
-                        margin: 5px 0;
-                        font-weight: 400;
-                        color: #161616;">How can you tell that the video showcases magic?
-                            </p>
-                            <hr style="border: none; height: 4px; background-color: #8FD8FB;">
-                            <p style="font-size: 14px;
-                        margin-bottom: 5px;
-                        line-height: 18px;">What's commonsense-violating is that, people standing on the ground can't touch the clouds, so the clouds can't be taken down by the man.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="demo-questions">
-                        <div>
-                            <p style="font-size: 18px;
-                      line-height: 20px;
-                      margin: 5px 0;
-                      font-weight: 400;
-                      color: #161616;">What method do you think the magician used to accomplish the magic trick?</p>
-                            <hr style="border: none; height: 4px; background-color: #8FD8FB;">
-                            <p style="font-size: 14px;
-                      margin-bottom: 5px;
-                      line-height: 18px;">The magician used video editing technology to combine a video of reaching for the cloud with a video of eating a marshmallow to create the magic effect.
-                            </p>
+                          color: #161616;">
+                          </p>
                         </div>
                     </div>
                 </div>
@@ -462,32 +334,92 @@
 <section class="hero is-small">
     <div class="hero-body">
         <div class="container">
-            <h2 class="title is-3" style="text-align: center;">
-                Upon the <font color=#f44a5e>EgoLife dataset</font>, we create <font color=#f17338>EgoLifeQA</font> that composes 6K life-oriented ultra-long-context questions. 75% of them needed backtracking more than 2 hours, 28% needed more than 24 hours.
-            </h2>
+            <h2 class="title is-2" style="text-align: center;">EgoLifeQA: Challenges for Personal Life Assistant</h2>
+            <p style="text-align: left; font-size: 20px; line-height: 1.2; margin: 20px 100px;">
+                <span style="font-size: 20px; font-weight: bold;">Based on the storyline of EgoLife dataset, we created EgoLifeQA with 3K life-oriented questions requiring ultra-long context understanding. We ensure that 75% of questions need looking back over 2 hours of history and 28% require reviewing more than 24 hours of past activities. 
+                We specifically design the following 5 types of QAs to evaluate the performance of the life assistant. 
+            </p>
             <div id="results-carousel1" class="carousel results-carousel1">
                 <div class="item">
-                    <!-- Your image here -->
-                    <h2 class="title is-3" style="text-align: center;">Overview of FunQA.</h2>
-                    <img src="static/images/fig_main.png" alt="MY ALT TEXT" />
-                    <h2 class="subtitle">
-                        <br>FunQA comprises three subsets of surprising videos: 1) HumorQA, 2) CreativeQA, and 3) MagicQA. Each subset is associated with three common tasks: <em>1) counter-intuitive timestamp localization}, </em><em>2) detailed video description}, and 3) reasoning around counter-intuitiveness</em>                            } (see
-                        <b>H1-3</b>,
-                        <b>C1-3</b>, and
-                        <b>M1-3</b>). Furthermore, we offer higher-level tasks tailored for each video type, such as <em>attributing a fitting and vivid title</em> for HumorQA and CreativeQA (see
-                        <b>H4</b>,
-                        <b>H4</b>), etc.
-                    </h2>
+                    <div style="min-width: 300px;
+                      margin-right: 20px;
+                      margin-left: 20px;
+                      text-align: center;">
+                        <h2 class="subtitle" style="margin-bottom: 20px; font-size: 24px; text-align: justify;">
+                            Question Types and Examples in the EgoLifeQA Benchmark. Each example includes a multiple-choice Q&A with supporting evidence from timestamps at least 5 minutes prior to the question. Black vertical lines indicate question timestamps, while colored curved lines connect to relevant evidence timestamps.
+                        </h2>
+                        <img src="static/images/egolifeqa.png" alt="MY ALT TEXT" />
+                    </div>
                 </div>
                 <div class="item">
-                    <!-- Your image here -->
-                    <h2 class="title is-3" style="text-align: center;">Dataset statistics</h2>
-                    <img src="static/images/statics.png" alt="MY ALT TEXT" />
-                    <h2 class="subtitle">
-                        <br>FunQA consists of three subsets, each corresponding to different video types, and is annotated with free-text QA pairs. The first row displays word clouds representing critical annotations for each subset. The second row
-                        provides key dataset statistics, including the number of videos for different splits, video length, and QA pair count for three subsets. In the last row, (g) highlights the high-frequency time span of the answer for localization
-                        questions in red, (h) shows the average word count of answers, and (i) presents the percentage of consensus between annotators for the same answer in a sampled set.
-                    </h2>
+                    <div style="min-width: 300px;
+                      margin-right: 20px;
+                      margin-left: 20px;
+                      text-align: center;">
+                        <h2 class="subtitle" style="margin-bottom: 20px; font-size: 24px;">
+                            <font color=#f44a5e><b>EntityLog</b></font> for tracking object details, usage and status history<br>
+                            <i style="font-size: 20px;">e.g., "What is the price of the yogurt?"</i>
+                        </h2>
+                        <video width="100%" poster="" id="tree" autoplay controls muted loop height="100%">
+                            <source src="static/videos/实体日志片段.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="min-width: 300px;
+                      margin-right: 20px;
+                      margin-left: 20px;
+                      text-align: center;">
+                        <h2 class="subtitle" style="margin-bottom: 20px; font-size: 24px;">
+                            <font color=#f17338><b>EventRecall</b></font> for remembering past activities<br>
+                            <i style="font-size: 20px;">e.g., "What did I eat for lunch this week?"</i>
+                        </h2>
+                        <video width="100%" poster="" id="tree" autoplay controls muted loop height="100%">
+                            <source src="static/videos/事件回忆片段.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="min-width: 300px;
+                      margin-right: 20px;
+                      margin-left: 20px;
+                      text-align: center;">
+                        <h2 class="subtitle" style="margin-bottom: 20px; font-size: 24px;">
+                            <font color=#f44a5e><b>TaskMaster</b></font> for intelligent task management<br>
+                            <i style="font-size: 20px;">e.g., "What else should I buy? I remember I used out of something..."</i>
+                        </h2>
+                        <video width="100%" poster="" id="tree" autoplay controls muted loop height="100%">
+                            <source src="static/videos/任务管理片段.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="min-width: 300px;
+                      margin-right: 20px;
+                      margin-left: 20px;
+                      text-align: center;">
+                        <h2 class="subtitle" style="margin-bottom: 20px; font-size: 24px;">
+                            <font color=#f17338><b>RelationMap</b></font> for understanding social interactions<br>
+                            <i style="font-size: 20px;">e.g., "Who was missing from the party?"</i>
+                        </h2>
+                        <video width="100%" poster="" id="tree" autoplay controls muted loop height="100%">
+                            <source src="static/videos/关系网络片段.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="min-width: 300px;
+                      margin-right: 20px;
+                      margin-left: 20px;
+                      text-align: center;">
+                        <h2 class="subtitle" style="margin-bottom: 20px; font-size: 24px;">
+                            <font color=#f44a5e><b>HabitInsight</b></font> for analyzing personal patterns<br>
+                            <i style="font-size: 20px;">e.g., "What is my favorite vegetable? Which fruit I eat most these days?"</i>
+                        </h2>
+                        <video width="100%" poster="" id="tree" autoplay controls muted loop height="100%">
+                            <source src="static/videos/习惯洞察片段.mp4" type="video/mp4">
+                        </video>
+                    </div>
                 </div>
             </div>
         </div>
@@ -498,9 +430,10 @@
 
 
 <!-- Image carousel -->
-<section class="hero is-small">
+<section class="hero is-small is-light">
     <div class="hero-body">
         <div class="container">
+            <h2 class="title is-2" style="text-align: center;">EgoGPT & EgoRAG for AI Assistants</h2>
             <div id="results-carousel1" class="carousel results-carousel1">
                 <div class="item">
                     <!-- Your image here -->
@@ -511,20 +444,7 @@
                         <b>Avg Len</b>b> denotes video average length; <b># Clips</b>b> means number of video clips; <b>VC</b> for visual-centric, <b>Des.</b> for Description, <b>Exp.</b> for Explanation, 
                         <b>STR</b> for Spatial-temporal Reasoning, <b>MC</b> means Multiple Choice QA, and <b>OE</b> shows Open Ended QA with <b>Average Word Count</b> per response.
                     </h2>
-                    <img src="static/images/table1.png" alt="MY ALT TEXT" />
-
-                </div>
-                <div class="item">
-                    <!-- Your image here -->
-                    <h2 class="title is-3" style="text-align: center;">Main result for baselines</h2>
-                    <h2 class="subtitle">
-                        <br>The FunQA benchmark consists of four task categories. H1, C1, M1 represent the counter-intuitive timestamp localization task, where IOU is used as the metric. H2, C2, M2 represent the detailed video description task, and
-                        H3, C3, M3 represent reasoning around counter-intuitiveness. For the higher-level tasks, H4, C4 involve attributing a fitting and vivid title. The responses for all these tasks in free-text format. We use the following metrics:
-                        BLEU-4 / ROUGE-L / CIDEr (shown in the first row) and BLEURT / GPT-4 (shown in the second row) for evaluation. C5 represents scoring the video creativity, and the metric is the <b>Accuracy</b> between the predicted score and the
-                        official score. We tested the caption-based and instruction-based models. Here we clarify the abbreviation in the table. F denotes Frame-rate L.M.: GIT_LARGE_MSRVTT; L.V.: GIT_LARGE_VATEX; D.C. means finetuned on Dense Caption; FunQA means
-                        finetuned on FunQA.
-                    </h2>
-                    <img src="static/images/table.png" alt="MY ALT TEXT" />
+                    <img src="static/images/egobulter.png" alt="MY ALT TEXT" />
 
                 </div>
                 <div class="item">
@@ -535,14 +455,67 @@
                         result. However, the answers from all models are still far from the ground truth. The descriptions of details and counter-intuitive explanations have numerous shortcomings. For example, Video-ChatGPT added incorrect details
                         to the description, such as "wearing sunglasses", the humorous reason for "throwing ketchup" was wrongly interpreted by VideoChat as "knocking over the ketchup bottle", etc.
                     </h2>
-                    <img src="static/images/model_comparison.png" alt="MY ALT TEXT" />
-
+                    <img src="static/images/egogpt_results.png" alt="MY ALT TEXT" />
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="title is-3" style="text-align: center;">Comparison of responses from different models</h2>
+                    <h2 class="subtitle">
+                        <br>Here shows the answers given by VideoChat, Video-ChatGPT, and Otter on HumorQA video. On task H2, H3, VideoChat has the best performance. On task H4, Video-ChatGPT and Otter answer better, which is in line with our experiment
+                        result. However, the answers from all models are still far from the ground truth. The descriptions of details and counter-intuitive explanations have numerous shortcomings. For example, Video-ChatGPT added incorrect details
+                        to the description, such as "wearing sunglasses", the humorous reason for "throwing ketchup" was wrongly interpreted by VideoChat as "knocking over the ketchup bottle", etc.
+                    </h2>
+                    <img src="static/images/qualitative.png" alt="MY ALT TEXT" />
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!-- End image carousel -->
+
+
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-2" style="text-align: center;">Other Interesting Information</h2>
+            <div id="results-carousel1" class="carousel results-carousel1">
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="subtitle">
+                        <br>Compare to other datasets, FunQA revolves around the captivating realm of interesting and counter-intuitive videos. The tasks within FunQA are specifically designed to challenge the vision capabilities of models, requiring
+                        strong skills in producing an in-depth description, interpretation, and spatial-temporal reasoning. Here we clarify the abbreviation in the table. 
+                        <b>Avg Len</b>b> denotes video average length; <b># Clips</b>b> means number of video clips; <b>VC</b> for visual-centric, <b>Des.</b> for Description, <b>Exp.</b> for Explanation, 
+                        <b>STR</b> for Spatial-temporal Reasoning, <b>MC</b> means Multiple Choice QA, and <b>OE</b> shows Open Ended QA with <b>Average Word Count</b> per response.
+                    </h2>
+                    <img src="static/images/egobulter.png" alt="MY ALT TEXT" />
+
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="title is-3" style="text-align: center;">Comparison of responses from different models</h2>
+                    <h2 class="subtitle">
+                        <br>Here shows the answers given by VideoChat, Video-ChatGPT, and Otter on HumorQA video. On task H2, H3, VideoChat has the best performance. On task H4, Video-ChatGPT and Otter answer better, which is in line with our experiment
+                        result. However, the answers from all models are still far from the ground truth. The descriptions of details and counter-intuitive explanations have numerous shortcomings. For example, Video-ChatGPT added incorrect details
+                        to the description, such as "wearing sunglasses", the humorous reason for "throwing ketchup" was wrongly interpreted by VideoChat as "knocking over the ketchup bottle", etc.
+                    </h2>
+                    <img src="static/images/egogpt_results.png" alt="MY ALT TEXT" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-2" style="text-align: center;">Join Us!</h2>
+            <p style="text-align: center; font-size: 20px; line-height: 1.5; margin: 20px 100px;">
+                EgoLife is an evolving initiative that aims to push the boundaries of egocentric AI. We are actively working to enhance every aspect of the project - from expanding our dataset and enriching annotations to advancing our models and refining the system architecture. We warmly welcome researchers who share our vision to join this exciting journey. If you're interested in contributing to the future of egocentric AI assistants, please reach out to us at <a href="mailto:jingkang001@e.ntu.edu.sg">jingkang001@e.ntu.edu.sg</a>. Together, let's bring truly personalized AI assistance into reality!
+            </p>
+        </div>
+    </div>
+</section>
+
 
 
 <!-- Youtube video
