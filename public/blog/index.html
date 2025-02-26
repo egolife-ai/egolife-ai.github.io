@@ -235,7 +235,7 @@
                         margin-right: 20px;
                         text-align: center;">
                         <img src="static/images/egolife_teaser.png" width="90%" height="100%" style="margin: 0 auto;">
-                        <h2 class="subtitle" style="margin-top: 20px; font-size: 16px; color: #666;">
+                        <h2 class="subtitle" style="margin-top: 20px; font-size: 16px; color: #666; text-align: justify; margin-left: 25px; margin-right: 25px;">
                             The EgoLife dataset contains rich multimodal signals including first-person video and audio recordings, eye gaze tracking data, IMU motion sensors, GPS location information, and environmental audio, providing a comprehensive view of daily activities.
                         </h2>
                     </div>
@@ -246,7 +246,7 @@
                         margin-right: 20px;
                         text-align: center;">
                         <img src="static/images/egohouse.png" width="60%" height="60%" style="margin: 0 auto;">
-                        <h2 class="subtitle" style="margin-top: 20px; font-size: 16px; color: #666;">
+                        <h2 class="subtitle" style="margin-top: 20px; font-size: 16px; color: #666;text-align: justify; margin-left: 25px; margin-right: 25px;">
                         The image shows a 3D reconstruction of the shared living space created using Aria Multi-MPS. The house also features 15 Exo cameras installed throughout the common areas and 2 mmWave devices (marked in red) positioned on the second floor. The visualization also includes color-coded traces showing 10-minute movement patterns of the participants throughout the house.
                         </h2>
                     </div>
@@ -256,9 +256,12 @@
                     <div style="min-width: 300px;
                         margin-right: 20px;
                         text-align: center;">
-                        <img src="static/images/timesync.png" width="90%" height="90%" style="margin: 0 auto;">
-                        <h2 class="subtitle" style="margin-top: 20px; font-size: 16px; color: #666;">
-                        The image shows the time synchronization of the egocentric and third-person views. The third-person view is synchronized with the egocentric view.
+                        <video width="75%" poster="" id="tree" autoplay controls muted loop height="100%">
+                            <source src="static/videos/timesync.mp4"
+                                    type="video/mp4">
+                        </video>
+                        <h2 class="subtitle" style="margin-top: 20px; font-size: 16px; color: #666;text-align: justify; margin-left: 25px; margin-right: 25px;">
+                        The video shows the time synchronization of the egocentric and third-person views. The synchronization is achieved by aligning the audio signals of each group (e.g., egocentric, level-1, level-2) first then across views with automatic audio alignment and human-in-the-loop.
                         </h2>
                     </div>
                 </div>
@@ -268,8 +271,8 @@
                         margin-right: 20px;
                         text-align: center;">
                         <img src="static/images/timeline.png" width="90%" height="100%" style="margin: 0 auto;">
-                        <h2 class="subtitle" style="margin-top: 20px; font-size: 16px; color: #666;">
-                        The timeline provides a comprehensive overview of each participant's activities across the seven days, showing how they spent their time individually and collaboratively. From daily routines to team meetings and event preparations, it offers a clear visualization of the participants' journey throughout the study period.
+                        <h2 class="subtitle" style="margin-top: 20px; font-size: 16px; color: #666; text-align: justify; margin-left: 25px; margin-right: 25px;">
+                        The timeline provides a comprehensive overview of each participant's activities across the seven days, showing how they spent their time individually and collaboratively. From daily routines to team meetings to entertainment and event preparations, it offers a clear visualization of the participants' journey throughout the study period. The figure is inspired by Github contribution graph and is implemented by python matplotlib.
                         </h2>
                     </div>
                 </div>
@@ -335,7 +338,7 @@
     <div class="hero-body">
         <div class="container">
             <h2 class="title is-2" style="text-align: center;">EgoLifeQA: Challenges for Personal Life Assistant</h2>
-            <p style="text-align: left; font-size: 20px; line-height: 1.2; margin: 20px 100px;">
+            <p style="text-align: left; font-size: 20px; line-height: 1.2; margin: 20px 100px; text-align: justify;">
                 <span style="font-size: 20px; font-weight: bold;">Based on the storyline of EgoLife dataset, we created EgoLifeQA with 3K life-oriented questions requiring ultra-long context understanding. We ensure that 75% of questions need looking back over 2 hours of history and 28% require reviewing more than 24 hours of past activities. 
                 We specifically design the following 5 types of QAs to evaluate the performance of the life assistant. 
             </p>
@@ -477,7 +480,7 @@
 <section class="hero is-small">
     <div class="hero-body">
         <div class="container">
-            <h2 class="title is-2" style="text-align: center;">Other Interesting Information</h2>
+            <h2 class="title is-2" style="text-align: center;">Other Interesting Info</h2>
             <div id="results-carousel1" class="carousel results-carousel1">
                 <div class="item">
                     <!-- Your image here -->
@@ -509,8 +512,8 @@
     <div class="hero-body">
         <div class="container">
             <h2 class="title is-2" style="text-align: center;">Join Us!</h2>
-            <p style="text-align: center; font-size: 20px; line-height: 1.5; margin: 20px 100px;">
-                EgoLife is an evolving initiative that aims to push the boundaries of egocentric AI. We are actively working to enhance every aspect of the project - from expanding our dataset and enriching annotations to advancing our models and refining the system architecture. We warmly welcome researchers who share our vision to join this exciting journey. If you're interested in contributing to the future of egocentric AI assistants, please reach out to us at <a href="mailto:jingkang001@e.ntu.edu.sg">jingkang001@e.ntu.edu.sg</a>. Together, let's bring truly personalized AI assistance into reality!
+            <p style="text-align: center; font-size: 20px; line-height: 1.5; margin: 20px 100px; text-align: justify;">
+                <b>EgoLife</b> is an evolving initiative that aims to push the boundaries of egocentric AI. We are actively working to enhance every aspect of the project - from <span style="color: #4CAF50;">expanding our dataset</span> and <span style="color: #FF9800;">enriching annotations</span> to <span style="color: #2196F3;">advancing our omnimodal models</span> and <span style="color: #9C27B0;">refining the long-range system II architecture</span>. We warmly welcome researchers who share our vision to join this exciting journey. If you're interested in contributing to the future of egocentric AI assistants, please reach out to us at <a href="mailto:jingkang001@e.ntu.edu.sg" style="color: #E91E63;">jingkang001@e.ntu.edu.sg</a>. Together, let's bring truly personalized AI assistance into reality!
             </p>
         </div>
     </div>
@@ -591,13 +594,11 @@ End video carousel -->
 <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
-        <pre><code>@inproceedings{xie2025funqa,
-  title={Funqa: Towards surprising video comprehension},
-  author={Xie, Binzhu and Zhang, Sicheng and Zhou, Zitang and Li, Bo and Zhang, Yuanhan and Hessel, Jack and Yang, Jingkang and Liu, Ziwei},
-  booktitle={European Conference on Computer Vision},
-  pages={39--57},
+        <pre><code>@inproceedings{yang2025egolife,
+  title={EgoLife: Towards Egocentric Life Assistant},
+  author={Yang, Jingkang and Liu, Shuai and Guo, Hongming and Dong, Yuhao and Zhang, Xiamengwei and Zhang, Sicheng and Wang, Pengyun and Zhou, Zitang and Xie, Binzhu and Wang, Ziyue and Ouyang, Bei and Lin, Zhengyu and Cominelli, Marco and Cai, Zhongang and Zhang, Yuanhan and Zhang, Peiyuan and Hong, Fangzhou and Widmer, Joerg and Gringoli, Francesco and Yang, Lei and Li, Bo and Liu, Ziwei},
+  booktitle={The IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   year={2025},
-  organization={Springer}
 }</code></pre>
     </div>
 </section>

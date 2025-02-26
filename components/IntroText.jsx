@@ -79,7 +79,7 @@ const IntroText = () => {
           setHomeView("all");
           setShowAllVideos(false);
           setShowLevel2Videos(false);
-          setshowDriver(fasle);
+          setshowDriver(false);
 
           // setInteractiveSection(true);
         },
@@ -371,12 +371,11 @@ const IntroText = () => {
             with the EgoLife Project!
           </InteractionPrompt> */}
         </Text>
-        {/* <Text>
+        <Text>
           <TextHeader className="text-xl">
-            Now please scroll down and click on the <span className="text-teal-600">Allow zoom and panning</span> button on the left to explore the EgoHouse to play
-            with the EgoLife Project!
+            Now please scroll down and explore the EgoHouse, enjoy!
           </TextHeader>
-        </Text> */}
+        </Text>
       </div>
     </>
   );

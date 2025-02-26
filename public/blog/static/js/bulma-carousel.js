@@ -1033,7 +1033,7 @@ var onMouseLeave = Symbol('onMouseLeave');
 
 var defaultOptions = {
 	autoplay: false,
-	autoplaySpeed: 3000
+	autoplaySpeed: 10000  // 修改为10000毫秒(10秒)
 };
 
 var Autoplay = function (_EventEmitter) {
@@ -2323,7 +2323,7 @@ var defaultOptions = {
   timing: 'ease',
 
   autoplay: false,
-  autoplaySpeed: 3000,
+  autoplaySpeed: 10000,  // 修改为10000毫秒(10秒)
   pauseOnHover: true,
   breakpoints: [{
     changePoint: 480,
