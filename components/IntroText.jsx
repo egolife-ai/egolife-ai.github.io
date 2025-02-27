@@ -315,7 +315,7 @@ const IntroText = () => {
           </TextHeader>
           <p className="text-justify">
             EgoLife captures a week-long shared living experience of six
-            volunteers planning a party. With 60 hours of footage per
+            volunteers planning a party. With ~50 hours of footage (7 days x 8 hours) per
             participant, this dataset enables analysis of long-term event
             connections spanning hours and days, advancing AI research in
             long-context understanding.
@@ -327,7 +327,7 @@ const IntroText = () => {
             <span className="text-title-green">Interpersonal</span>
           </TextHeader>
           <p className="text-justify">
-            The project documents six volunteers engaging in daily chores,
+            The project documents all volunteers engaging in daily chores,
             collaborative activities, conversations, and social interactions.
             Their synchronized egocentric videos offer unique insights into
             individual perspectives and group dynamics within a shared living
@@ -359,12 +359,11 @@ const IntroText = () => {
             <span>Extensive Annotation</span>
           </TextHeader>
           <p className="text-justify">
-            The dataset includes extensive annotations: transcriptions, QA
-            pairs, and dense captions. We provide a QA set for benchmarking
+            The dataset includes extensive annotations: transcriptions, dense captions. 
+            These rich annotations are crucial for training our omnimodal EgoGPT model.
+            We provide a EgoLifeQA set for benchmarking
             long-term egocentric video tasks, focusing on questions requiring
-            information spanning hours and days. These rich annotations support
-            various analyses and are crucial for training our state-of- the-art
-            EgoLLaVA and EgoGPT models.
+            information spanning hours and days. We propose EgoRAG framework to solve it.
           </p>
           {/* <InteractionPrompt>
             Now please scroll down and click to explore the EgoHouse to play
