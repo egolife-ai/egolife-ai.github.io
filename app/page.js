@@ -77,17 +77,15 @@ export default function Home() {
                   />
                 </h1>
               </li>
-              <NavItem href="">Data</NavItem>
+              <NavItem href="https://egolife.lmms-lab.com/">Demo</NavItem>
               <NavItem href="">Code</NavItem>
             </ul>
           </nav>
 
-        <h1>Welcome to the Mobile Version of the Homepage</h1>
-        <p>Please visit the desktop version for a better experience.</p>
+        <h1 className="text-4xl font-bold px-40 py-10">Please visit the desktop version for a better experience.</h1>
+        <p className="text-2xl mt-2 px-40 py-10">We recommend check out our <a href="https://egolife-ntu.github.io/blog" className="underline">blog</a> for more information, or play with our <a href="https://egolife.lmms-lab.com" className="underline">demo</a> to test EgoGPT.</p>
         </motion.div>
 
-
-        
       </main>
     );
   }
@@ -154,7 +152,7 @@ export default function Home() {
                   />
                 </h1>
               </li>
-              <NavItem href="">Data</NavItem>
+              <NavItem href="https://egolife.lmms-lab.com/">Demo</NavItem>
               <NavItem href="">Code</NavItem>
             </ul>
           </nav>

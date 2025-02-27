@@ -220,13 +220,10 @@
     <div class="hero-body">
         <div class="container">
             <h2 class="title is-2" style="text-align: center;">What EgoLife Captures and Annotates</h2>
-            <h2 class="title is-3" style="text-align: center;">
-                <font color="#2E86C1"><b>The EgoLife dataset</b></font> captures the lives of six participants over seven days,<br>
-                recorded through <font color="#8E44AD">Meta Aria glasses</font>.<br>
-                Living together with a shared goal of organizing an <font color="#27AE60">Earth Day Event</font>,<br>
-                their experiences are preserved in over <font color="#E67E22"><b>250 hours</b></font> of rich, everyday data.<br>
-                This includes <span style="color:#808080">egocentric</span>, <span style="color:#808080">interpersonal</span> and <span style="color:#808080">multiview</span> moments,<br>
-                offering a detailed and intimate view of their lives and teamwork.
+            <h2 class="title is-3" style="text-align: justify; margin-left: 25px; margin-right: 25px;">
+                Through <font color="#8E44AD">Meta Aria glasses</font> and other sensors, we collect rich multimodal data including <font color="#2E86C1">first-person video</font>, <font color="#E74C3C">audio</font>, <font color="#27AE60">eye tracking</font>, <font color="#F1C40F">motion</font>, and <font color="#E67E22">third-person videos</font> captured by mounted 15 Exo cameras. 
+                The dataset features <i>synchronized egocentric and third-person views</i>, <i>detailed activity timelines</i>, and <i>3D reconstructions of living spaces</i> - providing unprecedented insight into natural human behavior and interactions in a shared living environment.
+                Annotations include <font color="#E74C3C">audio transcripts</font>, <font color="#27AE60">dense captioning</font>, and <font color="#2E86C1">a long caption each 30 seconds</font>.
             </h2>
             <div id="results-carousel" class="carousel results-carousel">
                 <div class="item0">
@@ -440,33 +437,46 @@
             <div id="results-carousel1" class="carousel results-carousel1">
                 <div class="item">
                     <!-- Your image here -->
-                    <h2 class="title is-3" style="text-align: center;">Comparison between different benchmarks</h2>
+                    <h2 class="title is-3" style="text-align: center;">EgoBulter Architecture</h2>
                     <h2 class="subtitle">
-                        <br>Compare to other datasets, FunQA revolves around the captivating realm of interesting and counter-intuitive videos. The tasks within FunQA are specifically designed to challenge the vision capabilities of models, requiring
-                        strong skills in producing an in-depth description, interpretation, and spatial-temporal reasoning. Here we clarify the abbreviation in the table. 
-                        <b>Avg Len</b>b> denotes video average length; <b># Clips</b>b> means number of video clips; <b>VC</b> for visual-centric, <b>Des.</b> for Description, <b>Exp.</b> for Explanation, 
-                        <b>STR</b> for Spatial-temporal Reasoning, <b>MC</b> means Multiple Choice QA, and <b>OE</b> shows Open Ended QA with <b>Average Word Count</b> per response.
+                        The EgoBulter system consists of two key components: (a) a Captioning Stage that leverages EgoGPT to provide dense visual-audio understanding of egocentric video clips, and (b) a Question Answering Stage that employs EgoRAG for intelligent memory retrieval and response generation. The example shown illustrates the system's ability to perform sophisticated temporal reasoning spanning multiple days - it extracts relevant keywords, retrieves supporting evidence, and generates contextually appropriate answers for queries about daily activities like breakfast habits.
                     </h2>
                     <img src="static/images/egobulter.png" alt="MY ALT TEXT" />
 
                 </div>
                 <div class="item">
                     <!-- Your image here -->
-                    <h2 class="title is-3" style="text-align: center;">Comparison of responses from different models</h2>
+                    <h2 class="title is-3" style="text-align: center;">Overview of EgoGPT and its training pipeline</h2>
                     <h2 class="subtitle">
-                        <br>Here shows the answers given by VideoChat, Video-ChatGPT, and Otter on HumorQA video. On task H2, H3, VideoChat has the best performance. On task H4, Video-ChatGPT and Otter answer better, which is in line with our experiment
-                        result. However, the answers from all models are still far from the ground truth. The descriptions of details and counter-intuitive explanations have numerous shortcomings. For example, Video-ChatGPT added incorrect details
-                        to the description, such as "wearing sunglasses", the humorous reason for "throwing ketchup" was wrongly interpreted by VideoChat as "knocking over the ketchup bottle", etc.
+                        <br>The left section illustrates the progression from LLaVA-OneVision (Qwen2 as the LLM) to an audio-supported variant by integrating Whisper as an audio encoder and fine-tuning an audio projector with ASR datasets. The final EgoGPT model is trained using SFT on EgoIT and EgoLife datasets. The middle table presents the Dataset Composition of EgoIT-99K, summarizing nine egocentric video datasets used for instruction tuning, including the total duration, number of videos, and question-answer pairs. The right table reports the Performance of EgoGPT-7B, comparing it against state-of-the-art commercial and open-source models across three egocentric benchmarks: EgoSchema, EgoPlan, and EgoThink. The results indicate that EgoGPT, trained on EgoIT and EgoLife Day 1, achieves strong performance in egocentric reasoning tasks.
                     </h2>
-                    <img src="static/images/egogpt_results.png" alt="MY ALT TEXT" />
+                    <img src="static/images/egogpt.png" alt="MY ALT TEXT" />
                 </div>
                 <div class="item">
                     <!-- Your image here -->
-                    <h2 class="title is-3" style="text-align: center;">Comparison of responses from different models</h2>
+                    <h2 class="title is-3" style="text-align: center;">Gradio Demo of EgoGPT</h2>
                     <h2 class="subtitle">
-                        <br>Here shows the answers given by VideoChat, Video-ChatGPT, and Otter on HumorQA video. On task H2, H3, VideoChat has the best performance. On task H4, Video-ChatGPT and Otter answer better, which is in line with our experiment
-                        result. However, the answers from all models are still far from the ground truth. The descriptions of details and counter-intuitive explanations have numerous shortcomings. For example, Video-ChatGPT added incorrect details
-                        to the description, such as "wearing sunglasses", the humorous reason for "throwing ketchup" was wrongly interpreted by VideoChat as "knocking over the ketchup bottle", etc.
+                        <br>The demo shows EgoGPT's ability to understand user queries and generate contextually appropriate answers. Try out our <a href="https://egolife.lmms-lab.com/" target="_blank" style="color: #2E86C1; text-decoration: underline;">interactive demo</a> where you can upload your own egocentric video clips or experiment with our sample demo videos.
+                    </h2>
+                    <video width="100%" poster="" id="tree" autoplay controls muted loop height="100%">
+                        <source src="static/videos/egogpt_demo.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="title is-3" style="text-align: center;">Overview of EgoRAG framework</h2>
+                    <h2 class="subtitle">
+                        <br>A schematic representation of the EgoRAG system that processes user queries through a multi-stage pipeline: First, it identifies relevant time ranges using multi-level summarization. Then, it retrieves pertinent video segments based on those time ranges. Finally, it gathers multiple pieces of evidence which are fed into an answering model (e.g., EgoGPT) to generate comprehensive responses to user queries.
+                    </h2>
+                    <img src="static/images/egorag.png" alt="MY ALT TEXT" />
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="title is-3" style="text-align: center;">Qualitative Evaluation of EgoButler Framework.</h2>
+                    <h2 class="subtitle">
+                        <br>Qualitative Comparison of EgoGPT and Gemini-1.5-Pro under the EgoButler Framework. The top section compares
+                        captions from two models on a 30-second clip: EgoGPT excels in personalization and hallucinates less on the egocentric videos, providing more accurate descriptions of the first-person perspective and interpersonal interactions. The bottom
+                        section features a question that is answered by the clip, showcasing EgoRAG's skill in pinpointing relevant time slots and key clues from the video context. EgoRAG effectively retrieves temporal information and generates responses that demonstrate strong understanding of both visual and social context, outperforming Gemini-1.5-Pro in handling egocentric queries that require detailed scene comprehension and temporal reasoning.
                     </h2>
                     <img src="static/images/qualitative.png" alt="MY ALT TEXT" />
                 </div>
@@ -484,24 +494,22 @@
             <div id="results-carousel1" class="carousel results-carousel1">
                 <div class="item">
                     <!-- Your image here -->
-                    <h2 class="subtitle">
-                        <br>Compare to other datasets, FunQA revolves around the captivating realm of interesting and counter-intuitive videos. The tasks within FunQA are specifically designed to challenge the vision capabilities of models, requiring
-                        strong skills in producing an in-depth description, interpretation, and spatial-temporal reasoning. Here we clarify the abbreviation in the table. 
-                        <b>Avg Len</b>b> denotes video average length; <b># Clips</b>b> means number of video clips; <b>VC</b> for visual-centric, <b>Des.</b> for Description, <b>Exp.</b> for Explanation, 
-                        <b>STR</b> for Spatial-temporal Reasoning, <b>MC</b> means Multiple Choice QA, and <b>OE</b> shows Open Ended QA with <b>Average Word Count</b> per response.
+                    <h2 class="title is-3" style="text-align: center;">How the Project EgoLife Started</h2>
+                    <h2 class="subtitle" style="text-align: justify; margin-left: 25px; margin-right: 25px;">
+                        <br>The EgoLife project was initiated as an unexpected opportunity after Meta sponsored us six Aria glasses. With the devices in hand, the leading author began contemplating their best use. Initially, individual recordings—such as attending concerts and football matches—were tested, but these fragmented experiences lacked coherence. It soon became clear that to truly explore AI-driven egocentric perception, a more immersive and structured approach was needed: six individuals living together, sharing experiences, and generating rich, unfiltered real-life data.
+                        <br>
+                        <br>Recruitment was conducted via RedNote, attracting 32 applicants within two days—29 of whom were female, while the remaining three males turned out to be unavailable during the filming period. In the end, the leading author had to become one of the participants, and luckily, another male recruit was secured just a day before filming through a co-author's personal network. Otherwise the dataset would have been "EgoLife: Surrounded by beauties". Interestingly, the participants overwhelmingly exhibited intuitive (N) and perceiving (P) MBTI traits, suggesting a natural affinity for open-ended, exploratory experiences.
+                        <br>
+                        <br>The selection of activities played a crucial role in shaping the project. Initially, we considered structured scenarios like opening a hot pot restaurant, which would capture teamwork and problem-solving in a real-world setting. However, this approach was too specialized and artificial, limiting participant diversity and everyday interactions. Instead, we opted for a more natural setup—six individuals living together—allowing for organic, unscripted dynamics. To balance structure with authenticity, we introduced social activities like a house party, ensuring a rich, diverse dataset that truly reflects real-world egocentric experiences.
                     </h2>
-                    <img src="static/images/egobulter.png" alt="MY ALT TEXT" />
-
+                    </h2>
                 </div>
                 <div class="item">
-                    <!-- Your image here -->
-                    <h2 class="title is-3" style="text-align: center;">Comparison of responses from different models</h2>
-                    <h2 class="subtitle">
-                        <br>Here shows the answers given by VideoChat, Video-ChatGPT, and Otter on HumorQA video. On task H2, H3, VideoChat has the best performance. On task H4, Video-ChatGPT and Otter answer better, which is in line with our experiment
-                        result. However, the answers from all models are still far from the ground truth. The descriptions of details and counter-intuitive explanations have numerous shortcomings. For example, Video-ChatGPT added incorrect details
-                        to the description, such as "wearing sunglasses", the humorous reason for "throwing ketchup" was wrongly interpreted by VideoChat as "knocking over the ketchup bottle", etc.
+                    <h2 class="title is-3" style="text-align: center;">How much does it cost to build EgoLife dataset?</h2>
+                    <h2 class="subtitle" style="text-align: justify;">
+                        <br>The initial filming and preparation costs were surprisingly economical, especially given our excellent location near Universal Studios Beijing - an affordable yet convenient area where participants lived comfortably in the EgoHouse. We are deeply grateful to our volunteers to be very supportive and co-authors who served as crew members during filming, providing tireless and invaluable support throughout the process. The bulk of our budget went into data annotation, with EgoLifeQA being particularly challenging as it required annotators to exercise creativity and demonstrate deep insight into user needs and experiences. This aspect of annotation demands imagination and empathy to generate meaningful questions that reflect real-world assistance scenarios. We acknowledge that further iterations and improvements in this annotation process may be needed as we continue to refine the dataset. Below is a detailed breakdown of our costs, demonstrating our resource allocation priorities. For community who are interested in similar projects, we are happy to share our experience and annotation support, feel free to contact us.
                     </h2>
-                    <img src="static/images/egogpt_results.png" alt="MY ALT TEXT" />
+                    <img src="static/images/cost.png" alt="MY ALT TEXT" />
                 </div>
             </div>
         </div>

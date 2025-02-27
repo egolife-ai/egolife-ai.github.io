@@ -372,8 +372,8 @@ const IntroText = () => {
           </InteractionPrompt> */}
         </Text>
         <Text>
-          <TextHeader className="text-justify">
-            Now please scroll down and explore the EgoHouse, enjoy!
+          <TextHeader className="text-xl">
+            <span className="text-title-green">Now please scroll down and explore the EgoHouse, enjoy!</span>
           </TextHeader>
         </Text>
       </div>
