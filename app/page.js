@@ -65,8 +65,8 @@ export default function Home() {
         >
           <nav className="grid w-full place-items-center border-b border-white backdrop-blur">
             <ul className="flex gap-8">
-              <NavItem href="">Paper</NavItem>
-              <NavItem href="">Blog</NavItem>
+              <NavItem href="https://arxiv.org/">Paper</NavItem>
+              <NavItem href="https://egolife-ai.github.io/blog">Blog</NavItem>
               <li>
                 <h1>
                   <Image
@@ -78,7 +78,7 @@ export default function Home() {
                 </h1>
               </li>
               <NavItem href="https://egolife.lmms-lab.com/">Demo</NavItem>
-              <NavItem href="">Code</NavItem>
+              <NavItem href="https://github.com/EvolvingLMMs-Lab/EgoLife">Code</NavItem>
             </ul>
           </nav>
 
@@ -140,8 +140,8 @@ export default function Home() {
         >
           <nav className="grid w-full place-items-center border-b border-white backdrop-blur">
             <ul className="flex gap-8">
-              <NavItem href="">Paper</NavItem>
-              <NavItem href="">Blog</NavItem>
+              <NavItem href="https://arxiv.org/">Paper</NavItem>
+              <NavItem href="https://egolife-ai.github.io/blog">Blog</NavItem>
               <li>
                 <h1>
                   <Image
@@ -153,7 +153,7 @@ export default function Home() {
                 </h1>
               </li>
               <NavItem href="https://egolife.lmms-lab.com/">Demo</NavItem>
-              <NavItem href="">Code</NavItem>
+              <NavItem href="https://github.com/EvolvingLMMs-Lab/EgoLife">Code</NavItem>
             </ul>
           </nav>
 
