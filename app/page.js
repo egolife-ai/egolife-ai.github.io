@@ -82,8 +82,8 @@ export default function Home() {
             </ul>
           </nav>
 
-        <h1 className="text-4xl font-bold px-40 py-10">Please visit the desktop version for a better experience.</h1>
-        <p className="text-2xl mt-2 px-40 py-10">We recommend check out our <a href="https://egolife-ntu.github.io/blog" className="underline">blog</a> for more information, or play with our <a href="https://egolife.lmms-lab.com" className="underline">demo</a> to test EgoGPT.</p>
+          <p className="text-xl mt-2 px-20 py-4">👋 Welcome to EgoLife mobile version! We warmly invite you to visit our desktop version to be our guest at 🏠 EgoHouse ✨</p>
+          <p className="text-xl mt-2 px-20 py-4">But you can still check out our <a href="https://egolife-ntu.github.io/blog" className="underline">📝 blog</a> or play with <a href="https://egolife.lmms-lab.com" className="underline">🎮 demo</a></p>
         </motion.div>
 
       </main>

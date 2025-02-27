@@ -126,7 +126,7 @@
                                 </span>
                             <!-- Dataset -->
                             <span class="link-block">
-                  <a href="https://huggingface.co/datasets/EgoLife" target="_blank"
+                  <a href="https://huggingface.co/collections/lmms-lab/egolife-67c04574c2a9b64ab312c342" target="_blank"
                      class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <p style="font-size:20px">&#x1F917;</p>
@@ -137,7 +137,7 @@
 
                             <!-- Github link -->
                             <span class="link-block">
-                    <a href="https://github.com/LMMs-Lab/EgoLife" target="_blank"
+                    <a href="https://github.com/EvolvingLMMs-Lab/EgoLife" target="_blank"
                        class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -151,11 +151,21 @@
                   <a href="https://egolife.lmms-lab.com/" target="_blank"
                      class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                    <p style="font-size:20px">&#127902;</p>
+                    <p style="font-size:20px">&#128421;</p>
                   </span>
                   <span>Gradio Demo</span>
                 </a>
               </span>
+
+              <span class="link-block">
+                <a href="https://www.youtube.com/playlist?list=PLlweuFnfdo6F9Fu2Kyhc-kXu3qnaVsYOu" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <p style="font-size:20px">&#127902;</p>
+                </span>
+                <span>EgoLife Movie Mode</span>
+              </a>
+            </span>
 
 
                         </div>
@@ -178,7 +188,7 @@
                 <h2 class="title is-3">Abstract</h2>
                 <div class="content has-text-justified">
                     <p>
-                        We introduce <font color="#2E86C1"><b>EgoLife</b></font>, a project to develop an egocentric life assistant that accompanies and enhances personal efficiency through AI-powered wearable glasses 👓. To lay the foundation for this assistant, we conducted a comprehensive data collection study where six participants lived together for one week, continuously recording their daily activities—including discussions 💬, shopping 🛍️, cooking 🍳, socializing 👥, and entertainment 🎮—using AI glasses for multimodal egocentric video capture, along with synchronized third-person-view video references. This effort resulted in the <font color="#2E86C1"><b>EgoLife Dataset</b></font> 📖, a comprehensive 300-hour egocentric, interpersonal, multiview, and multimodal daily life dataset with intensive annotation. Leveraging this dataset, we introduce <font color="#E74C3C"><b>EgoLifeQA</b></font>❓, a suite of 6K long-context, life-oriented question-answering tasks designed to provide meaningful assistance in daily life by addressing practical questions such as recalling past relevant events, monitoring health habits, and offering personalized recommendations.
+                        We introduce <font color="#2E86C1"><b>EgoLife</b></font>, a project to develop an egocentric life assistant that accompanies and enhances personal efficiency through AI-powered wearable glasses 👓. To lay the foundation for this assistant, we conducted a comprehensive data collection study where six participants lived together for one week, continuously recording their daily activities—including discussions 💬, shopping 🛍️, cooking 🍳, socializing 👥, and entertainment 🎮—using AI glasses for multimodal egocentric video capture, along with synchronized third-person-view video references. This effort resulted in the <font color="#2E86C1"><b>EgoLife Dataset</b></font> 📖, a comprehensive 300-hour egocentric, interpersonal, multiview, and multimodal daily life dataset with intensive annotation. Leveraging this dataset, we introduce <font color="#E74C3C"><b>EgoLifeQA</b></font>❓, a suite of 3K long-context, life-oriented question-answering tasks designed to provide meaningful assistance in daily life by addressing practical questions such as recalling past relevant events, monitoring health habits, and offering personalized recommendations.
                         <br><br>
                         To address the key technical challenges of <font color="#27AE60">1)</font> developing robust visual-audio models for egocentric data, <font color="#27AE60">2)</font> enabling identity recognition, and <font color="#27AE60">3)</font> facilitating long-context question answering over extensive temporal information, we introduce <font color="#8E44AD"><b>EgoBulter</b></font> 🫡, an integrated system comprising <font color="#E67E22"><b>EgoGPT</b></font> 🧠 and <font color="#E67E22"><b>EgoRAG</b></font> 🔍. EgoGPT is a vision-language model trained on egocentric datasets, achieving state-of-the-art performance on egocentric video understanding. EgoRAG is a retrieval-based component that supports answering ultra-long-context questions. Our experimental studies verify their working mechanisms and reveal critical factors and bottlenecks, guiding future improvements. By releasing our datasets, models, and benchmarks, we aim to stimulate further research in egocentric AI assistants.
                     </p>
@@ -198,7 +208,7 @@
             <font color="#2E86C1"><b>The EgoLife dataset</b></font> captures the lives of six participants over seven days,<br>
             recorded through <font color="#8E44AD">Meta Aria glasses</font>.<br>
             Living together with a shared goal of organizing an <font color="#27AE60">Earth Day Event</font>,<br>
-            their experiences are preserved in over <font color="#E67E22"><b>250 hours</b></font> of rich, everyday data.<br>
+            their experiences are preserved in over <font color="#E67E22"><b>250+ hours</b></font> of rich, everyday data.<br>
             This includes <span style="color:#808080">egocentric</span>, <span style="color:#808080">interpersonal</span> and <span style="color:#808080">multiview</span> moments,<br>
             offering a detailed and intimate view of their lives and teamwork.
         </h2>
@@ -385,7 +395,7 @@
         <div class="container">
             <h2 class="title is-2" style="text-align: center;">EgoLifeQA: Challenges for Personal Life Assistant</h2>
             <p style="text-align: left; font-size: 20px; line-height: 1.2; margin: 20px 100px; text-align: justify;">
-                <span style="font-size: 20px; font-weight: bold;">Based on the storyline of EgoLife dataset, we created EgoLifeQA with 3K life-oriented questions requiring ultra-long context understanding. We ensure that 75% of questions need looking back over 2 hours of history and 28% require reviewing more than 24 hours of past activities. 
+                <span style="font-size: 20px; font-weight: bold;">Based on the storyline of EgoLife dataset, we created EgoLifeQA with 3K life-oriented questions requiring ultra-long context understanding. We ensure that 66% of questions need looking back over 2 hours of history and over 15% require reviewing more than 24 hours of past activities. 
                 We specifically design the following 5 types of QAs to evaluate the performance of the life assistant. 
             </p>
             <div id="results-carousel1" class="carousel results-carousel1">
@@ -497,7 +507,7 @@
                     <!-- Your image here -->
                     <h2 class="title is-3" style="text-align: center;">Overview of EgoGPT and its training pipeline</h2>
                     <h2 class="subtitle">
-                        <br>The left section illustrates the progression from LLaVA-OneVision (Qwen2 as the LLM) to an audio-supported variant by integrating Whisper as an audio encoder and fine-tuning an audio projector with ASR datasets. The final EgoGPT model is trained using SFT on EgoIT and EgoLife datasets. The middle table presents the Dataset Composition of EgoIT-99K, summarizing nine egocentric video datasets used for instruction tuning, including the total duration, number of videos, and question-answer pairs. The right table reports the Performance of EgoGPT-7B, comparing it against state-of-the-art commercial and open-source models across three egocentric benchmarks: EgoSchema, EgoPlan, and EgoThink. The results indicate that EgoGPT, trained on EgoIT and EgoLife Day 1, achieves strong performance in egocentric reasoning tasks.
+                        <br>The upper section illustrates the progression from LLaVA-OneVision (Qwen2 as the LLM) to an audio-supported variant by integrating Whisper as an audio encoder and fine-tuning an audio projector with ASR datasets. The final EgoGPT model is trained using SFT on EgoIT and EgoLife datasets. The left table presents the Dataset Composition of EgoIT-99K, summarizing nine egocentric video datasets used for instruction tuning, including the total duration, number of videos, and question-answer pairs. The right table reports the Performance of EgoGPT-7B, comparing it against state-of-the-art commercial and open-source models across three egocentric benchmarks: EgoSchema, EgoPlan, and EgoThink. The results indicate that EgoGPT, trained on EgoIT and EgoLife Day 1, achieves strong performance in egocentric reasoning tasks.
                     </h2>
                     <img src="static/images/egogpt.png" alt="MY ALT TEXT" />
                 </div>
@@ -518,6 +528,14 @@
                         <br>A schematic representation of the EgoRAG system that processes user queries through a multi-stage pipeline: First, it identifies relevant time ranges using multi-level summarization. Then, it retrieves pertinent video segments based on those time ranges. Finally, it gathers multiple pieces of evidence which are fed into an answering model (e.g., EgoGPT) to generate comprehensive responses to user queries.
                     </h2>
                     <img src="static/images/egorag.png" alt="MY ALT TEXT" />
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <h2 class="title is-3" style="text-align: center;">Quantitative Evaluation of EgoButler Framework.</h2>
+                    <h2 class="subtitle">
+                        <br>EgoGPT outperforms general models through personalization and multi-modal integration, though some challenges remain (low scores). EgoRAG improves long-context QA by retrieving evidence across videos, surpassing both EgoGPT and Gemini-1.5-Pro on 2+ hour queries. The combination of visual and audio signals provides optimal performance.
+                    </h2>
+                    <img src="static/images/egorag_num.png" alt="MY ALT TEXT" />
                 </div>
                 <div class="item">
                     <!-- Your image here -->
@@ -559,6 +577,13 @@
                         <br>The initial filming and preparation costs were surprisingly economical, especially given our excellent location near Universal Studios Beijing - an affordable yet convenient area where participants lived comfortably in the EgoHouse. We are deeply grateful to our volunteers to be very supportive and co-authors who served as crew members during filming, providing tireless and invaluable support throughout the process. The bulk of our budget went into data annotation, with EgoLifeQA being particularly challenging as it required annotators to exercise creativity and demonstrate deep insight into user needs and experiences. This aspect of annotation demands imagination and empathy to generate meaningful questions that reflect real-world assistance scenarios. We acknowledge that further iterations and improvements in this annotation process may be needed as we continue to refine the dataset. Below is a detailed breakdown of our costs, demonstrating our resource allocation priorities. For community who are interested in similar projects, we are happy to share our experience and annotation support, feel free to contact us.
                     </h2>
                     <img src="static/images/cost.png" alt="MY ALT TEXT" />
+                </div>
+                <div class="item">
+                    <h2 class="title is-3" style="text-align: center;">Cool History Book for Egocentric Vision Datasets</h2>
+                    <h2 class="subtitle" style="text-align: justify;">
+                        <br> We are happy to share this timeline, presented by <a href="https://zitangzhou.github.io/egovis-timeline/" target="_blank" style="color: #2E86C1; text-decoration: underline;">Zitang Zhou</a>. It showcases the evolution of egocentric vision datasets, from early hand-object interactions to today's advanced multimodal AI-powered memory systems. It's a wild ride through years of innovation—tracking, learning, and redefining how AI sees the world from a first-person perspective! Guided by this history lesson, our EgoIT was born with great respect for the past research and great hope for the future.
+                    </h2>
+                    <img src="static/images/egohistory.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
                 </div>
             </div>
         </div>
